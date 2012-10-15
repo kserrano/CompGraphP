@@ -107,7 +107,7 @@ Vector4 Renderer::traceColor(Ray ray, Scene* scene, unsigned int recDepth) {
 		Ray newRay(iData->position, R);
 		newRay.min_t = newRay.min_t + ray.epsilon_t;
 
-		color = traceColor(newRay, scene, recDepth+1).operator*(iData->reflectionPercentage) + ( m_shader->shade(iData, scene).operator*(1 - iData->reflectionPercentage)) ;
+		color = traceColor(newRay, scene, recDepth+1).operator*(iData->reflectionPercentage) + ( m_shader->shade(iData, scene).operator*(1 - iData->reflectionPercentage)) ; // recursion
 		
     }
 	else {

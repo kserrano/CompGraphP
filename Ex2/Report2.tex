@@ -77,5 +77,36 @@ To create the shadows, we need to figure out for a point, which light are occlud
   \centering
     \includegraphics[width=0.5\textwidth]{02_Exc_Raytracing_Framework/2_2_1.png}
 \end{figure}
+\section*{2.2.2   Additional Intersection Information for Recursion}
+We just have to store the value of the reflection percentage in the field of the object $IntersectionData$ with $iData\rightarrow reflectionPercentage = getReflectionPercentage();$ for each geometrics when a intersection occurred.
 
+\section*{2.2.3   Reflection}
+The principle of recursion is easy : each incident ray is reflected with the same angle with the normal of the surface when a collision occurred, and then this ray is just a new ray with an another direction and we can do a recursion with a pre-definite recursion depth to generate the image.
+
+\begin{figure}[h!]
+\caption{Reflection}
+  \centering
+    \includegraphics[width=0.4\textwidth]{recuRay.png}
+\end{figure}
+
+So we get the normal $\mathbf{N}$ in the object $IntersectionData$ and calculate the new ray $$\mathbf{R_{reflected} = 2 \mathbf{N} \cdot \bf (N \cdot R_{incident}) - R_{incident}}$$ where $\bf R_{incident}$ is the direction of the incoming ray in opposite direction and it's given in the object $Ray$ by $ray.direction$. Then just change the sign, i.e $-ray.direction$, and replace in the formula to get the new ray. So we created an new object $Ray$ from the intersection point and in the direction of $\bf R_{reflected}$ and then use a recursion to compute the color of the final point with the formula $$ reflectionPercentage * reflectedShading + (1 - reflectionPercentage) * objectShading $$ where $reflectedShading$ is the recursion step and $objectShading$ is the m\_shader.
+
+\begin{figure}[h!]
+\caption{Recursion in Infinite Room (Recursion depth = 0, 1, 2, 8)}
+    \includegraphics[width=0.5\textwidth]{02_Exc_Raytracing_Framework/rec0.png}
+    \includegraphics[width=0.5\textwidth]{02_Exc_Raytracing_Framework/rec1.png}
+        \includegraphics[width=0.5\textwidth]{02_Exc_Raytracing_Framework/rec2.png}
+            \includegraphics[width=0.5\textwidth]{02_Exc_Raytracing_Framework/rec8.png}
+\end{figure}
+
+\newpage
+\section*{2.3   Final Rendering}
+To render the big Mesh, we just change the scene in $Raytracer.cpp$ and as we can see the shape in 588 triangles is correctly interpolated and reflected, as the sphere at top right.
+\begin{figure}[h!]
+\caption{Big Mesh}
+  \centering
+    \includegraphics[width=0.5\textwidth]{Cornell.png}
+\end{figure}
+
+This take 1129 sec on a laptop and 622 sec on the other laptop with a recursion depth of 8 and Release mode. So it's very long.
 \end{document}
