@@ -1,4 +1,4 @@
-<Renderer  recursionDepth="1">
+<Renderer  recursionDepth="8">
   <!--<Sampler type="ScanlineSampler"/>-->
   <Sampler type="ProgressiveSampler"/>
   <!--<Sampler type="SuperSampler" mSubsamples="3" jitter="yes"/>-->
