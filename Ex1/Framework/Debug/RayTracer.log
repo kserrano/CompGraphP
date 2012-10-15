@@ -1,0 +1,71 @@
+﻿Build started 04.10.2012 08:34:19.
+     1>Project "C:\Users\Kevin\Google Drive\Systèmes de Communication - BA5\Intr to Computer graphics\projects\Exercices\Framework\RayTracer.vcxproj" on node 2 (Build target(s)).
+         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /I.\include /I. /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _CRT_SECURE_NO_DEPRECATE /D _VC80_UPGRADE=0x0710 /D _MBCS /Gm /EHsc /RTC1 /MTd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt sceneelements\IElement.cpp sceneelements\PointLight.cpp sceneelements\SimpleCamera.cpp sceneelements\geometry\CirclePlane.cpp sceneelements\geometry\Mesh.cpp sceneelements\geometry\MeshTriangle.cpp sceneelements\geometry\MeshVertex.cpp sceneelements\geometry\Plane.cpp sceneelements\geometry\Quadric.cpp sceneelements\geometry\Sphere.cpp sceneelements\geometry\Torus.cpp sceneelements\geometry\Triangle.cpp rendererelements\IntersectionData.cpp rendererelements\ProgressiveSampler.cpp rendererelements\Sample.cpp rendererelements\ScanlineSampler.cpp rendererelements\Shader\ConstantShader.cpp rendererelements\Shader\DiffuseLightingShader.cpp rendererelements\Shader\PhongLightingShader.cpp utils\Image.cpp utils\Ray.cpp parser\ConfigParser.cpp parser\SceneParser.cpp parser\SimpleXMLNode.cpp exporter\Exporter.cpp trianglemeshreader\OBJFileReader.cpp RayTracer.cpp Renderer.cpp Scene.cpp
+         Scene.cpp
+         Renderer.cpp
+         RayTracer.cpp
+         OBJFileReader.cpp
+         Exporter.cpp
+         SimpleXMLNode.cpp
+         SceneParser.cpp
+         ConfigParser.cpp
+         Ray.cpp
+         Image.cpp
+         PhongLightingShader.cpp
+         DiffuseLightingShader.cpp
+         ConstantShader.cpp
+         ScanlineSampler.cpp
+         Sample.cpp
+         ProgressiveSampler.cpp
+         IntersectionData.cpp
+         Triangle.cpp
+         Torus.cpp
+         Sphere.cpp
+         Generating Code...
+         Compiling...
+         Quadric.cpp
+         Plane.cpp
+         MeshVertex.cpp
+         MeshTriangle.cpp
+         Mesh.cpp
+         CirclePlane.cpp
+         SimpleCamera.cpp
+         PointLight.cpp
+         IElement.cpp
+         Generating Code...
+         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"Debug\RayTracer.exe" /INCREMENTAL /NOLOGO /LIBPATH:.\lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"Debug\RayTracer.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"Debug\RayTracer.lib" /MACHINE:X86 /SAFESEH Debug\IElement.obj
+         Debug\PointLight.obj
+         Debug\SimpleCamera.obj
+         Debug\CirclePlane.obj
+         Debug\Mesh.obj
+         Debug\MeshTriangle.obj
+         Debug\MeshVertex.obj
+         Debug\Plane.obj
+         Debug\Quadric.obj
+         Debug\Sphere.obj
+         Debug\Torus.obj
+         Debug\Triangle.obj
+         Debug\IntersectionData.obj
+         Debug\ProgressiveSampler.obj
+         Debug\Sample.obj
+         Debug\ScanlineSampler.obj
+         Debug\ConstantShader.obj
+         Debug\DiffuseLightingShader.obj
+         Debug\PhongLightingShader.obj
+         Debug\Image.obj
+         Debug\Ray.obj
+         Debug\ConfigParser.obj
+         Debug\SceneParser.obj
+         Debug\SimpleXMLNode.obj
+         Debug\Exporter.obj
+         Debug\OBJFileReader.obj
+         Debug\RayTracer.obj
+         Debug\Renderer.obj
+         Debug\Scene.obj
+     1>IElement.obj : warning LNK4075: ignoring '/EDITANDCONTINUE' due to '/SAFESEH' specification
+         RayTracer.vcxproj -> C:\Users\Kevin\Google Drive\Systèmes de Communication - BA5\Intr to Computer graphics\projects\Exercices\Framework\Debug\RayTracer.exe
+     1>Done Building Project "C:\Users\Kevin\Google Drive\Systèmes de Communication - BA5\Intr to Computer graphics\projects\Exercices\Framework\RayTracer.vcxproj" (Build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:28.72

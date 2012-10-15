@@ -1,0 +1,180 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{E87BEDB3-C9C1-4A24-A755-F9492EF1F9F4}</ProjectGuid>
+    <RootNamespace>RayTracer</RootNamespace>
+    <Keyword>Win32Proj</Keyword>
+    <VCTargetsPath Condition="'$(VCTargetsPath11)' != '' and '$(VSVersion)' == '' and $(VisualStudioVersion) == ''">$(VCTargetsPath11)</VCTargetsPath>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v110</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v110</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC71.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC71.props" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.30319.1</_ProjectFileVersion>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Debug\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Debug\</IntDir>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</LinkIncremental>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Release\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Release\</IntDir>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</LinkIncremental>
+    <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" />
+    <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" />
+    <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" />
+    <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" />
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>.\include;.;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;_CRT_SECURE_NO_DEPRECATE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>true</MinimalRebuild>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+    </ClCompile>
+    <Link>
+      <OutputFile>$(OutDir)RayTracer.exe</OutputFile>
+      <AdditionalLibraryDirectories>.\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <ProgramDatabaseFile>$(OutDir)RayTracer.pdb</ProgramDatabaseFile>
+      <SubSystem>Console</SubSystem>
+      <TargetMachine>MachineX86</TargetMachine>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>.\include;.;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;_CRT_SECURE_NO_DEPRECATE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <Link>
+      <OutputFile>$(OutDir)RayTracer.exe</OutputFile>
+      <AdditionalLibraryDirectories>.\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Console</SubSystem>
+      <OptimizeReferences>true</OptimizeReferences>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <TargetMachine>MachineX86</TargetMachine>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="sceneelements\ICamera.h" />
+    <ClInclude Include="sceneelements\IElement.h" />
+    <ClInclude Include="sceneelements\ILight.h" />
+    <ClInclude Include="sceneelements\PointLight.h" />
+    <ClInclude Include="sceneelements\SimpleCamera.h" />
+    <ClInclude Include="sceneelements\geometry\CirclePlane.h" />
+    <ClInclude Include="sceneelements\geometry\Mesh.h" />
+    <ClInclude Include="sceneelements\geometry\MeshTriangle.h" />
+    <ClInclude Include="sceneelements\geometry\MeshVertex.h" />
+    <ClInclude Include="sceneelements\geometry\Plane.h" />
+    <ClInclude Include="sceneelements\geometry\Quadric.h" />
+    <ClInclude Include="sceneelements\geometry\Sphere.h" />
+    <ClInclude Include="sceneelements\geometry\Torus.h" />
+    <ClInclude Include="sceneelements\geometry\Triangle.h" />
+    <ClInclude Include="rendererelements\IntersectionData.h" />
+    <ClInclude Include="rendererelements\ISampler.h" />
+    <ClInclude Include="rendererelements\ProgressiveSampler.h" />
+    <ClInclude Include="rendererelements\Sample.h" />
+    <ClInclude Include="rendererelements\ScanlineSampler.h" />
+    <ClInclude Include="rendererelements\Shader\ConstantShader.h" />
+    <ClInclude Include="rendererelements\Shader\DiffuseLightingShader.h" />
+    <ClInclude Include="rendererelements\Shader\IShader.h" />
+    <ClInclude Include="rendererelements\Shader\PhongLightingShader.h" />
+    <ClInclude Include="utils\AABB.h" />
+    <ClInclude Include="utils\ComplexNumber.h" />
+    <ClInclude Include="utils\IFunctionObservable.h" />
+    <ClInclude Include="utils\Image.h" />
+    <ClInclude Include="utils\KDTreeNode.h" />
+    <ClInclude Include="utils\Material.h" />
+    <ClInclude Include="utils\Matrix4.h" />
+    <ClInclude Include="utils\Point.h" />
+    <ClInclude Include="utils\Ray.h" />
+    <ClInclude Include="utils\rpoly.h" />
+    <ClInclude Include="utils\string_conversions.h" />
+    <ClInclude Include="utils\Vector2.h" />
+    <ClInclude Include="utils\Vector3.h" />
+    <ClInclude Include="utils\Vector4.h" />
+    <ClInclude Include="utils\Textures\ITexture.h" />
+    <ClInclude Include="parser\ConfigParser.h" />
+    <ClInclude Include="parser\SceneParser.h" />
+    <ClInclude Include="parser\SimpleXMLNode.h" />
+    <ClInclude Include="exporter\Exporter.h" />
+    <ClInclude Include="trianglemeshreader\OBJFileReader.h" />
+    <ClInclude Include="Renderer.h" />
+    <ClInclude Include="Scene.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="sceneelements\IElement.cpp" />
+    <ClCompile Include="sceneelements\PointLight.cpp" />
+    <ClCompile Include="sceneelements\SimpleCamera.cpp" />
+    <ClCompile Include="sceneelements\geometry\CirclePlane.cpp" />
+    <ClCompile Include="sceneelements\geometry\Mesh.cpp" />
+    <ClCompile Include="sceneelements\geometry\MeshTriangle.cpp" />
+    <ClCompile Include="sceneelements\geometry\MeshVertex.cpp" />
+    <ClCompile Include="sceneelements\geometry\Plane.cpp" />
+    <ClCompile Include="sceneelements\geometry\Quadric.cpp" />
+    <ClCompile Include="sceneelements\geometry\Sphere.cpp" />
+    <ClCompile Include="sceneelements\geometry\Torus.cpp" />
+    <ClCompile Include="sceneelements\geometry\Triangle.cpp" />
+    <ClCompile Include="rendererelements\IntersectionData.cpp" />
+    <ClCompile Include="rendererelements\ProgressiveSampler.cpp" />
+    <ClCompile Include="rendererelements\Sample.cpp" />
+    <ClCompile Include="rendererelements\ScanlineSampler.cpp" />
+    <ClCompile Include="rendererelements\Shader\ConstantShader.cpp" />
+    <ClCompile Include="rendererelements\Shader\DiffuseLightingShader.cpp" />
+    <ClCompile Include="rendererelements\Shader\PhongLightingShader.cpp" />
+    <ClCompile Include="utils\Image.cpp" />
+    <ClCompile Include="utils\Ray.cpp" />
+    <ClCompile Include="parser\ConfigParser.cpp" />
+    <ClCompile Include="parser\SceneParser.cpp" />
+    <ClCompile Include="parser\SimpleXMLNode.cpp" />
+    <ClCompile Include="exporter\Exporter.cpp" />
+    <ClCompile Include="trianglemeshreader\OBJFileReader.cpp" />
+    <ClCompile Include="RayTracer.cpp" />
+    <ClCompile Include="Renderer.cpp" />
+    <ClCompile Include="Scene.cpp" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

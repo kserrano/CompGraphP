@@ -1,0 +1,54 @@
+<Scene background="1 1 1 1.0" ambient="0 0 0 1.0">
+  <Camera position="0 1 5" direction="0 0 -1" up="0 1 0" angle="20" resolutionX="750" resolutionY="750"/>
+
+  <Lights>
+    <Light position="0 1.75 1" color="0.5 0.5 0.5 1"/>
+    <Light position="0 1.8 3" color="0.5 0.5 0.5 1"/>
+    <Light position="-0.9 1.9 3" color="0.2 0.2 0.2 1"/>
+  </Lights>
+	
+  <Materials>
+    <White emission="0.0 0.0 0.0 1.0" ambient="0.1 0.1 0.1 1.0" diffuse="0.8 0.8 0.8 1.0" specular=".2 .2 .2 1.0" shininess="20.0"/>
+    <Red emission="0.0 0.0 0.0 1.0" ambient="0.678 0.145 0 1.0" diffuse="0.678 0.145 0 1.0" specular=".2 .2 .2 1.0" shininess="20.0"/>
+    <Green emission="0.0 0.0 0.0 1.0" ambient="0.341 0.49 0 1.0" diffuse="0.341 0.49 0 1.0" specular=".2 .2 .2 1.0" shininess="20.0"/>
+    <Blue emission="0.0 0.0 0.0 1.0" ambient="0.247 0.4549 0.6627 1.0" diffuse="0.247 0.4549 0.6627 1.0" specular=".2 .2 .2 1.0" shininess="20.0"/>
+    <Brown emission="0.0 0.0 0.0 1.0" ambient=".1 .1 .1 1.0" diffuse=".4 0.2 0.1 1.0" specular=".2 .2 .2 1.0" shininess="20.0"/>
+    <Black emission="0.0 0.0 0.0 1.0" ambient=".1 .1 .1 1.0" diffuse="0 0 0 1.0" specular=".2 .2 .2 1.0" shininess="50.0"/>
+  </Materials>
+
+  <Elements>
+	
+	
+    <TriangleMesh OBJFileName="sceneDescriptions/LGG_L_rot_c.obj" translateFromOrigin="0.0 0.8 2" radius="0.45" reflectionPercentage="1.0">
+    <Material ref="black"/>
+    </TriangleMesh>
+	
+    <Plane point="0 0 0" normal="0 1 0" color="1 1 1 1.0" reflectionPercentage="0.01">
+	<Material ref="White" />
+    </Plane>
+    <Plane point="-1 0 0" normal="1 0 0" color="1 0 0 1.0" reflectionPercentage="0.01">
+	<Material ref="Red" />
+    </Plane>
+    <Plane point="1 0 0" normal="-1 0 0" color="0 1 0 1.0" reflectionPercentage="0.01">  
+	<Material ref="Green" />
+    </Plane>
+    <Plane point="0 2 0" normal="0 -1 0" color="1 1 1 1.0" reflectionPercentage="0.01">
+	<Material ref="White" />
+    </Plane>
+    <Plane point="0 0 0" normal="0 0 1" color="1 1 1 1.0" reflectionPercentage="0.01">
+	<Material ref="White" />
+    </Plane>
+
+    <Sphere center="0.75 1.5 2" radius="0.25" reflectionPercentage="1.0">
+	<Material ref="Black" />
+    </Sphere>
+    <Sphere center="-0.75 0.15 2.1" radius="0.15" reflectionPercentage="0.01">
+	<Material ref="White" />
+    </Sphere>
+    <Sphere center="0.55 0.5 0.7" radius="0.45" reflectionPercentage="0.01">
+	<Material ref="Blue" />
+    </Sphere>
+	
+	
+  </Elements>
+</Scene>

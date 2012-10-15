@@ -1,0 +1,251 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="sceneelements">
+      <UniqueIdentifier>{04401e5c-0be2-4313-9022-ef62ef95c3b6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="sceneelements\geometry">
+      <UniqueIdentifier>{df2d8f46-aac5-4b08-9bc5-92c82528d6f0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="rendererelements">
+      <UniqueIdentifier>{0c3e9f1e-ca0d-4386-858a-2e36262e1cdf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="rendererelements\shader">
+      <UniqueIdentifier>{3241b490-777d-4f55-849d-037065473556}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="utils">
+      <UniqueIdentifier>{110749d8-38ad-4768-9650-8e9d8012d551}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="utils\textures">
+      <UniqueIdentifier>{e7cc0404-b360-4186-8b4b-3f868af06793}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="parser">
+      <UniqueIdentifier>{e447b98b-e1fd-44f2-8a05-cf3c26ed4e23}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="exporter">
+      <UniqueIdentifier>{eb7742a6-40c8-4c9f-b3ee-f2d75c7a8f96}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="trianglemeshreader">
+      <UniqueIdentifier>{4459128d-8453-4829-9fda-f207da5a1998}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include=".\sceneelements\ICamera.h">
+      <Filter>sceneelements</Filter>
+    </ClInclude>
+    <ClInclude Include=".\sceneelements\IElement.h">
+      <Filter>sceneelements</Filter>
+    </ClInclude>
+    <ClInclude Include=".\sceneelements\ILight.h">
+      <Filter>sceneelements</Filter>
+    </ClInclude>
+    <ClInclude Include=".\sceneelements\PointLight.h">
+      <Filter>sceneelements</Filter>
+    </ClInclude>
+    <ClInclude Include=".\sceneelements\SimpleCamera.h">
+      <Filter>sceneelements</Filter>
+    </ClInclude>
+    <ClInclude Include=".\sceneelements\geometry\CirclePlane.h">
+      <Filter>sceneelements\geometry</Filter>
+    </ClInclude>
+    <ClInclude Include=".\sceneelements\geometry\Mesh.h">
+      <Filter>sceneelements\geometry</Filter>
+    </ClInclude>
+    <ClInclude Include=".\sceneelements\geometry\MeshTriangle.h">
+      <Filter>sceneelements\geometry</Filter>
+    </ClInclude>
+    <ClInclude Include=".\sceneelements\geometry\MeshVertex.h">
+      <Filter>sceneelements\geometry</Filter>
+    </ClInclude>
+    <ClInclude Include=".\sceneelements\geometry\Plane.h">
+      <Filter>sceneelements\geometry</Filter>
+    </ClInclude>
+    <ClInclude Include=".\sceneelements\geometry\Quadric.h">
+      <Filter>sceneelements\geometry</Filter>
+    </ClInclude>
+    <ClInclude Include=".\sceneelements\geometry\Sphere.h">
+      <Filter>sceneelements\geometry</Filter>
+    </ClInclude>
+    <ClInclude Include=".\sceneelements\geometry\Torus.h">
+      <Filter>sceneelements\geometry</Filter>
+    </ClInclude>
+    <ClInclude Include=".\sceneelements\geometry\Triangle.h">
+      <Filter>sceneelements\geometry</Filter>
+    </ClInclude>
+    <ClInclude Include=".\rendererelements\IntersectionData.h">
+      <Filter>rendererelements</Filter>
+    </ClInclude>
+    <ClInclude Include=".\rendererelements\ISampler.h">
+      <Filter>rendererelements</Filter>
+    </ClInclude>
+    <ClInclude Include=".\rendererelements\ProgressiveSampler.h">
+      <Filter>rendererelements</Filter>
+    </ClInclude>
+    <ClInclude Include=".\rendererelements\Sample.h">
+      <Filter>rendererelements</Filter>
+    </ClInclude>
+    <ClInclude Include=".\rendererelements\ScanlineSampler.h">
+      <Filter>rendererelements</Filter>
+    </ClInclude>
+    <ClInclude Include=".\rendererelements\Shader\ConstantShader.h">
+      <Filter>rendererelements\shader</Filter>
+    </ClInclude>
+    <ClInclude Include=".\rendererelements\Shader\DiffuseLightingShader.h">
+      <Filter>rendererelements\shader</Filter>
+    </ClInclude>
+    <ClInclude Include=".\rendererelements\Shader\IShader.h">
+      <Filter>rendererelements\shader</Filter>
+    </ClInclude>
+    <ClInclude Include=".\rendererelements\Shader\PhongLightingShader.h">
+      <Filter>rendererelements\shader</Filter>
+    </ClInclude>
+    <ClInclude Include=".\utils\AABB.h">
+      <Filter>utils</Filter>
+    </ClInclude>
+    <ClInclude Include=".\utils\ComplexNumber.h">
+      <Filter>utils</Filter>
+    </ClInclude>
+    <ClInclude Include=".\utils\IFunctionObservable.h">
+      <Filter>utils</Filter>
+    </ClInclude>
+    <ClInclude Include=".\utils\Image.h">
+      <Filter>utils</Filter>
+    </ClInclude>
+    <ClInclude Include=".\utils\KDTreeNode.h">
+      <Filter>utils</Filter>
+    </ClInclude>
+    <ClInclude Include=".\utils\Material.h">
+      <Filter>utils</Filter>
+    </ClInclude>
+    <ClInclude Include=".\utils\Matrix4.h">
+      <Filter>utils</Filter>
+    </ClInclude>
+    <ClInclude Include=".\utils\Point.h">
+      <Filter>utils</Filter>
+    </ClInclude>
+    <ClInclude Include=".\utils\Ray.h">
+      <Filter>utils</Filter>
+    </ClInclude>
+    <ClInclude Include=".\utils\rpoly.h">
+      <Filter>utils</Filter>
+    </ClInclude>
+    <ClInclude Include=".\utils\string_conversions.h">
+      <Filter>utils</Filter>
+    </ClInclude>
+    <ClInclude Include=".\utils\Vector2.h">
+      <Filter>utils</Filter>
+    </ClInclude>
+    <ClInclude Include=".\utils\Vector3.h">
+      <Filter>utils</Filter>
+    </ClInclude>
+    <ClInclude Include=".\utils\Vector4.h">
+      <Filter>utils</Filter>
+    </ClInclude>
+    <ClInclude Include=".\utils\Textures\ITexture.h">
+      <Filter>utils\textures</Filter>
+    </ClInclude>
+    <ClInclude Include=".\parser\ConfigParser.h">
+      <Filter>parser</Filter>
+    </ClInclude>
+    <ClInclude Include=".\parser\SceneParser.h">
+      <Filter>parser</Filter>
+    </ClInclude>
+    <ClInclude Include=".\parser\SimpleXMLNode.h">
+      <Filter>parser</Filter>
+    </ClInclude>
+    <ClInclude Include=".\exporter\Exporter.h">
+      <Filter>exporter</Filter>
+    </ClInclude>
+    <ClInclude Include=".\trianglemeshreader\Mesh3DReader.h">
+      <Filter>trianglemeshreader</Filter>
+    </ClInclude>
+    <ClInclude Include=".\trianglemeshreader\OBJFileReader.h">
+      <Filter>trianglemeshreader</Filter>
+    </ClInclude>
+    <ClInclude Include=".\Renderer.h" />
+    <ClInclude Include=".\Scene.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include=".\sceneelements\IElement.cpp">
+      <Filter>sceneelements</Filter>
+    </ClCompile>
+    <ClCompile Include=".\sceneelements\PointLight.cpp">
+      <Filter>sceneelements</Filter>
+    </ClCompile>
+    <ClCompile Include=".\sceneelements\SimpleCamera.cpp">
+      <Filter>sceneelements</Filter>
+    </ClCompile>
+    <ClCompile Include=".\sceneelements\geometry\CirclePlane.cpp">
+      <Filter>sceneelements\geometry</Filter>
+    </ClCompile>
+    <ClCompile Include=".\sceneelements\geometry\Mesh.cpp">
+      <Filter>sceneelements\geometry</Filter>
+    </ClCompile>
+    <ClCompile Include=".\sceneelements\geometry\MeshTriangle.cpp">
+      <Filter>sceneelements\geometry</Filter>
+    </ClCompile>
+    <ClCompile Include=".\sceneelements\geometry\MeshVertex.cpp">
+      <Filter>sceneelements\geometry</Filter>
+    </ClCompile>
+    <ClCompile Include=".\sceneelements\geometry\Plane.cpp">
+      <Filter>sceneelements\geometry</Filter>
+    </ClCompile>
+    <ClCompile Include=".\sceneelements\geometry\Quadric.cpp">
+      <Filter>sceneelements\geometry</Filter>
+    </ClCompile>
+    <ClCompile Include=".\sceneelements\geometry\Sphere.cpp">
+      <Filter>sceneelements\geometry</Filter>
+    </ClCompile>
+    <ClCompile Include=".\sceneelements\geometry\Torus.cpp">
+      <Filter>sceneelements\geometry</Filter>
+    </ClCompile>
+    <ClCompile Include=".\sceneelements\geometry\Triangle.cpp">
+      <Filter>sceneelements\geometry</Filter>
+    </ClCompile>
+    <ClCompile Include=".\rendererelements\IntersectionData.cpp">
+      <Filter>rendererelements</Filter>
+    </ClCompile>
+    <ClCompile Include=".\rendererelements\ProgressiveSampler.cpp">
+      <Filter>rendererelements</Filter>
+    </ClCompile>
+    <ClCompile Include=".\rendererelements\Sample.cpp">
+      <Filter>rendererelements</Filter>
+    </ClCompile>
+    <ClCompile Include=".\rendererelements\ScanlineSampler.cpp">
+      <Filter>rendererelements</Filter>
+    </ClCompile>
+    <ClCompile Include=".\rendererelements\Shader\ConstantShader.cpp">
+      <Filter>rendererelements\shader</Filter>
+    </ClCompile>
+    <ClCompile Include=".\rendererelements\Shader\DiffuseLightingShader.cpp">
+      <Filter>rendererelements\shader</Filter>
+    </ClCompile>
+    <ClCompile Include=".\rendererelements\Shader\PhongLightingShader.cpp">
+      <Filter>rendererelements\shader</Filter>
+    </ClCompile>
+    <ClCompile Include=".\utils\Image.cpp">
+      <Filter>utils</Filter>
+    </ClCompile>
+    <ClCompile Include=".\utils\Ray.cpp">
+      <Filter>utils</Filter>
+    </ClCompile>
+    <ClCompile Include=".\parser\ConfigParser.cpp">
+      <Filter>parser</Filter>
+    </ClCompile>
+    <ClCompile Include=".\parser\SceneParser.cpp">
+      <Filter>parser</Filter>
+    </ClCompile>
+    <ClCompile Include=".\parser\SimpleXMLNode.cpp">
+      <Filter>parser</Filter>
+    </ClCompile>
+    <ClCompile Include=".\exporter\Exporter.cpp">
+      <Filter>exporter</Filter>
+    </ClCompile>
+    <ClCompile Include=".\trianglemeshreader\OBJFileReader.cpp">
+      <Filter>trianglemeshreader</Filter>
+    </ClCompile>
+    <ClCompile Include=".\RayTracer.cpp" />
+    <ClCompile Include=".\Renderer.cpp" />
+    <ClCompile Include=".\Scene.cpp" />
+  </ItemGroup>
+</Project>

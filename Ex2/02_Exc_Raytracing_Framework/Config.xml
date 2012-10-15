@@ -1,0 +1,10 @@
+<Renderer  recursionDepth="1">
+  <!--<Sampler type="ScanlineSampler"/>-->
+  <Sampler type="ProgressiveSampler"/>
+  <!--<Sampler type="SuperSampler" mSubsamples="3" jitter="yes"/>-->
+
+  <!--<Shader type="ConstantShader"/>-->
+  <!--<Shader type="DiffuseLightingShader"/>-->
+  <Shader type="PhongLightingShader"/>
+  <!--<Shader type="PhongBumpShader"/>-->
+</Renderer>
