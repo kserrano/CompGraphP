@@ -82,6 +82,7 @@ We just have to store the value of the reflection percentage in the field of the
 
 \section*{2.2.3   Reflection}
 The principle of recursion is easy : each incident ray is reflected with the same angle with the normal of the surface when a collision occurred, and then this ray is just a new ray with an another direction and we can do a recursion with a pre-definite recursion depth to generate the image.
+We add the ray's constant value epsilon\_t to min\_t in order to avoid an intersection at the start of the ray with the object due to imprecisions. If we don't use this, then incorrect intersections will be added, and some legit intersections will be neglected due to the previous incorrect one.
 
 \begin{figure}[h!]
 \caption{Reflection}
@@ -91,6 +92,7 @@ The principle of recursion is easy : each incident ray is reflected with the sam
 
 So we get the normal $\mathbf{N}$ in the object $IntersectionData$ and calculate the new ray $$\mathbf{R_{reflected} = 2 \mathbf{N} \cdot \bf (N \cdot R_{incident}) - R_{incident}}$$ where $\bf R_{incident}$ is the direction of the incoming ray in opposite direction and it's given in the object $Ray$ by $ray.direction$. Then just change the sign, i.e $-ray.direction$, and replace in the formula to get the new ray. So we created an new object $Ray$ from the intersection point and in the direction of $\bf R_{reflected}$ and then use a recursion to compute the color of the final point with the formula $$ reflectionPercentage * reflectedShading + (1 - reflectionPercentage) * objectShading $$ where $reflectedShading$ is the recursion step and $objectShading$ is the m\_shader.
 
+\newpage
 \begin{figure}[h!]
 \caption{Recursion in Infinite Room (Recursion depth = 0, 1, 2, 8)}
     \includegraphics[width=0.5\textwidth]{02_Exc_Raytracing_Framework/rec0.png}
@@ -100,6 +102,7 @@ So we get the normal $\mathbf{N}$ in the object $IntersectionData$ and calculate
 \end{figure}
 
 \newpage
+
 \section*{2.3   Final Rendering}
 To render the big Mesh, we just change the scene in $Raytracer.cpp$ and as we can see the shape in 588 triangles is correctly interpolated and reflected, as the sphere at top right.
 \begin{figure}[h!]
