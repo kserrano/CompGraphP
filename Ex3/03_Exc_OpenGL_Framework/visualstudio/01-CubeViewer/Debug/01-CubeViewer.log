@@ -1,15 +1,12 @@
-﻿Build started 18.10.2012 08:57:40.
+﻿Build started 18.10.2012 09:36:08.
      1>Project "C:\Users\Gianni\Documents\Git\CompGraphProj\Ex3\03_Exc_OpenGL_Framework\visualstudio\01-CubeViewer\01-CubeViewer.vcxproj" on node 2 (Build target(s)).
      1>ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /I"C:\Users\Gianni\Documents\Git\CompGraphProj\Ex3\03_Exc_OpenGL_Framework\visualstudio\01-CubeViewer\\..\libs" /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _USE_MATH_DEFINES /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt "..\..\src\exercises\01-CubeViewer\CubeViewer.cpp" "..\..\src\exercises\01-CubeViewer\main.cpp" ..\..\src\gl\fbo.cpp ..\..\src\gl\GlutViewer.cpp ..\..\src\gl\Mesh3D.cpp ..\..\src\gl\shader.cpp ..\..\src\gl\texture.cpp ..\..\src\gl\TrackballViewer.cpp
-         TrackballViewer.cpp
-         texture.cpp
-         shader.cpp
-         Mesh3D.cpp
-         GlutViewer.cpp
-         fbo.cpp
-         main.cpp
+         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /I"C:\Users\Gianni\Documents\Git\CompGraphProj\Ex3\03_Exc_OpenGL_Framework\visualstudio\01-CubeViewer\\..\libs" /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _USE_MATH_DEFINES /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt "..\..\src\exercises\01-CubeViewer\CubeViewer.cpp" "..\..\src\exercises\01-CubeViewer\main.cpp" ..\..\src\gl\TrackballViewer.cpp
          CubeViewer.cpp
+         Generating Code...
+         Compiling...
+         TrackballViewer.cpp
+         main.cpp
          Generating Code...
        Link:
          C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\Gianni\Documents\Git\CompGraphProj\Ex3\03_Exc_OpenGL_Framework\visualstudio\01-CubeViewer\Debug\01-CubeViewer.exe" /INCREMENTAL /NOLOGO /LIBPATH:"C:\Users\Gianni\Documents\Git\CompGraphProj\Ex3\03_Exc_OpenGL_Framework\visualstudio\01-CubeViewer\\..\libs" glut32.lib glew32.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\Gianni\Documents\Git\CompGraphProj\Ex3\03_Exc_OpenGL_Framework\visualstudio\01-CubeViewer\Debug\01-CubeViewer.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\Gianni\Documents\Git\CompGraphProj\Ex3\03_Exc_OpenGL_Framework\visualstudio\01-CubeViewer\Debug\01-CubeViewer.lib" /MACHINE:X86 /SAFESEH Debug\CubeViewer.obj
@@ -20,10 +17,9 @@
          Debug\shader.obj
          Debug\texture.obj
          Debug\TrackballViewer.obj
-     1>CubeViewer.obj : warning LNK4075: ignoring '/EDITANDCONTINUE' due to '/SAFESEH' specification
          01-CubeViewer.vcxproj -> C:\Users\Gianni\Documents\Git\CompGraphProj\Ex3\03_Exc_OpenGL_Framework\visualstudio\01-CubeViewer\Debug\01-CubeViewer.exe
      1>Done Building Project "C:\Users\Gianni\Documents\Git\CompGraphProj\Ex3\03_Exc_OpenGL_Framework\visualstudio\01-CubeViewer\01-CubeViewer.vcxproj" (Build target(s)).
 
 Build succeeded.
 
-Time Elapsed 00:00:11.93
+Time Elapsed 00:00:04.94

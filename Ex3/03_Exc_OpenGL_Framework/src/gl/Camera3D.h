@@ -19,6 +19,7 @@
 //== INCLUDES =================================================================
 
 #include "Object3D.h"
+#include "math.h"
 
 //== CLASS DEFINITION =========================================================
 
@@ -120,10 +121,17 @@ public: //------------------------------------------------ public methods
     void getScreenExtents(double &top, double &bottom, double &left, double &right)
     {
 		// ((( Exercise 3.2.4 )))
-        bottom = -1;
+        /*bottom = -1;
         top = 1;
         left = -1;
-        right = 1;
+        right = 1;*/
+
+		double halfHeight = tan(m_fovy*M_PI/180);
+		double halfWidth = halfHeight * ((double)getWidth()/(double)getHeight());
+		bottom = -halfHeight;
+        top = halfHeight;
+        left = -halfWidth;
+        right = halfWidth;
     }
 	
 	
@@ -133,10 +141,20 @@ protected:
     {
 		// ((( Exercise 3.2.4 )))
         // replace this
-		m_perspectiveProjectionMatrix = Matrix4(
+		/*m_perspectiveProjectionMatrix = Matrix4(
                                                 1, 0, 0, 0,
                                                 0, 1, 0, 0,
                                                 0, 0, 1, 1,
+                                                0, 0, -1, 0
+                                                );*/
+		double n,f,t,b,r,l;
+		getScreenExtents(t,b,r,l);
+		n = getNearPlane();
+		f = getFarPlane();
+		m_perspectiveProjectionMatrix = Matrix4(
+                                                (2*n)/(r-l), 0, (r+l)/(r-l), 0,
+                                                0, (2*n)/(t-b), (t+b)/(t-b), 0,
+                                                0, 0, -(f+b)/(f-n), -(2*n*f)/(f-n),
                                                 0, 0, -1, 0
                                                 );
 	}

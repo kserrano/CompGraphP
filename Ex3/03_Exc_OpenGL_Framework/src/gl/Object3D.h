@@ -80,6 +80,7 @@ public:
 	{
         Matrix4 translationMatrix = getTranslationMatrix(_trans);
 		// ((( Exercise 3.4 )))
+
 	}
 	
 	//! scales the object in the world coordinate system
@@ -101,6 +102,7 @@ public:
 	{
         Matrix4 rotationMatrix = getRotationMatrix(_axis,_angle);
 		// ((( Exercise 3.4 )))
+
 	}
 
 	//! rotates the object in the object coordinate system
@@ -129,12 +131,17 @@ public:
 	//! calculate translation matrix from vector
 	static Matrix4 getTranslationMatrix(const Vector3 & _trans) {
 
-		Matrix4 translationMatrix;
+		//Matrix4 translationMatrix;
         
 		// ((( Exercise 3.4 )))
-        translationMatrix.loadIdentity();
+        //translationMatrix.loadIdentity();
 		
-		return translationMatrix;
+		return Matrix4(
+			          1, 0, 0, _trans.x,
+                      0, 1, 0, _trans.y,
+                      0, 0, 1, _trans.z,
+                      0, 0, -1, 0
+                      );;
 	}
 	
 	//! calculate scale matrix from vector
