@@ -1,0 +1,15 @@
+*.slo
+*.lo
+*.o
+
+*.so
+*.lai
+*.la
+*.a
+
+*.suo
+*.user
+*.sdf
+*.opensdf
+
+Release/

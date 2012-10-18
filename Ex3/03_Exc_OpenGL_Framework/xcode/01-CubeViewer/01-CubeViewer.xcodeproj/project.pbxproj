@@ -1,0 +1,330 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 45;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		8DD76F6A0486A84900D96B5E /* 01-CubeViewer.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = C6859E8B029090EE04C91782 /* 01-CubeViewer.1 */; };
+		FF4C97501239091600DD463F /* CubeViewer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FF4C97351239091600DD463F /* CubeViewer.cpp */; };
+		FF4C97511239091600DD463F /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FF4C97371239091600DD463F /* main.cpp */; };
+		FF4C97521239091600DD463F /* fbo.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FF4C973A1239091600DD463F /* fbo.cpp */; };
+		FF4C97531239091600DD463F /* GlutViewer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FF4C973D1239091600DD463F /* GlutViewer.cpp */; };
+		FF4C97541239091600DD463F /* Mesh3D.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FF4C97401239091600DD463F /* Mesh3D.cpp */; };
+		FF4C97551239091600DD463F /* shader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FF4C97431239091600DD463F /* shader.cpp */; };
+		FF4C97561239091600DD463F /* texture.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FF4C97451239091600DD463F /* texture.cpp */; };
+		FF4C97571239091600DD463F /* TrackballViewer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FF4C97471239091600DD463F /* TrackballViewer.cpp */; };
+		FF4C975A1239092B00DD463F /* GLUT.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF4C97591239092B00DD463F /* GLUT.framework */; };
+		FF4C975C1239093200DD463F /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF4C975B1239093200DD463F /* OpenGL.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		8DD76F690486A84900D96B5E /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 8;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+				8DD76F6A0486A84900D96B5E /* 01-CubeViewer.1 in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		8DD76F6C0486A84900D96B5E /* 01-CubeViewer */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "01-CubeViewer"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C6859E8B029090EE04C91782 /* 01-CubeViewer.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = "01-CubeViewer.1"; sourceTree = "<group>"; };
+		FF4C97331239091600DD463F /* cube.fs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = cube.fs; sourceTree = "<group>"; };
+		FF4C97341239091600DD463F /* cube.vs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = cube.vs; sourceTree = "<group>"; };
+		FF4C97351239091600DD463F /* CubeViewer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CubeViewer.cpp; sourceTree = "<group>"; };
+		FF4C97361239091600DD463F /* CubeViewer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CubeViewer.h; sourceTree = "<group>"; };
+		FF4C97371239091600DD463F /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		FF4C97391239091600DD463F /* Camera3D.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Camera3D.h; sourceTree = "<group>"; };
+		FF4C973A1239091600DD463F /* fbo.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = fbo.cpp; sourceTree = "<group>"; };
+		FF4C973B1239091600DD463F /* fbo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = fbo.h; sourceTree = "<group>"; };
+		FF4C973C1239091600DD463F /* gl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = gl.h; sourceTree = "<group>"; };
+		FF4C973D1239091600DD463F /* GlutViewer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GlutViewer.cpp; sourceTree = "<group>"; };
+		FF4C973E1239091600DD463F /* GlutViewer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GlutViewer.h; sourceTree = "<group>"; };
+		FF4C973F1239091600DD463F /* Light3D.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Light3D.h; sourceTree = "<group>"; };
+		FF4C97401239091600DD463F /* Mesh3D.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Mesh3D.cpp; sourceTree = "<group>"; };
+		FF4C97411239091600DD463F /* Mesh3D.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Mesh3D.h; sourceTree = "<group>"; };
+		FF4C97421239091600DD463F /* Object3D.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Object3D.h; sourceTree = "<group>"; };
+		FF4C97431239091600DD463F /* shader.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = shader.cpp; sourceTree = "<group>"; };
+		FF4C97441239091600DD463F /* shader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = shader.h; sourceTree = "<group>"; };
+		FF4C97451239091600DD463F /* texture.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = texture.cpp; sourceTree = "<group>"; };
+		FF4C97461239091600DD463F /* texture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = texture.h; sourceTree = "<group>"; };
+		FF4C97471239091600DD463F /* TrackballViewer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TrackballViewer.cpp; sourceTree = "<group>"; };
+		FF4C97481239091600DD463F /* TrackballViewer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrackballViewer.h; sourceTree = "<group>"; };
+		FF4C974A1239091600DD463F /* Matrix4.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Matrix4.h; sourceTree = "<group>"; };
+		FF4C974B1239091600DD463F /* Vector2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Vector2.h; sourceTree = "<group>"; };
+		FF4C974C1239091600DD463F /* Vector3.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Vector3.h; sourceTree = "<group>"; };
+		FF4C974D1239091600DD463F /* Vector4.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Vector4.h; sourceTree = "<group>"; };
+		FF4C974F1239091600DD463F /* StopWatch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StopWatch.h; sourceTree = "<group>"; };
+		FF4C97591239092B00DD463F /* GLUT.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLUT.framework; path = System/Library/Frameworks/GLUT.framework; sourceTree = SDKROOT; };
+		FF4C975B1239093200DD463F /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		8DD76F660486A84900D96B5E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FF4C975A1239092B00DD463F /* GLUT.framework in Frameworks */,
+				FF4C975C1239093200DD463F /* OpenGL.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		08FB7794FE84155DC02AAC07 /* 01-CubeViewer */ = {
+			isa = PBXGroup;
+			children = (
+				08FB7795FE84155DC02AAC07 /* Source */,
+				C6859E8C029090F304C91782 /* Documentation */,
+				1AB674ADFE9D54B511CA2CBB /* Products */,
+				FF4C97591239092B00DD463F /* GLUT.framework */,
+				FF4C975B1239093200DD463F /* OpenGL.framework */,
+			);
+			name = "01-CubeViewer";
+			sourceTree = "<group>";
+		};
+		08FB7795FE84155DC02AAC07 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				FF4C97301239091600DD463F /* src */,
+			);
+			name = Source;
+			sourceTree = "<group>";
+		};
+		1AB674ADFE9D54B511CA2CBB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8DD76F6C0486A84900D96B5E /* 01-CubeViewer */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		C6859E8C029090F304C91782 /* Documentation */ = {
+			isa = PBXGroup;
+			children = (
+				C6859E8B029090EE04C91782 /* 01-CubeViewer.1 */,
+			);
+			name = Documentation;
+			sourceTree = "<group>";
+		};
+		FF4C97301239091600DD463F /* src */ = {
+			isa = PBXGroup;
+			children = (
+				FF4C97311239091600DD463F /* exercises */,
+				FF4C97381239091600DD463F /* gl */,
+				FF4C97491239091600DD463F /* math */,
+				FF4C974E1239091600DD463F /* utils */,
+			);
+			name = src;
+			path = ../../src;
+			sourceTree = SOURCE_ROOT;
+		};
+		FF4C97311239091600DD463F /* exercises */ = {
+			isa = PBXGroup;
+			children = (
+				FF4C97321239091600DD463F /* 01-CubeViewer */,
+			);
+			path = exercises;
+			sourceTree = "<group>";
+		};
+		FF4C97321239091600DD463F /* 01-CubeViewer */ = {
+			isa = PBXGroup;
+			children = (
+				FF4C97331239091600DD463F /* cube.fs */,
+				FF4C97341239091600DD463F /* cube.vs */,
+				FF4C97351239091600DD463F /* CubeViewer.cpp */,
+				FF4C97361239091600DD463F /* CubeViewer.h */,
+				FF4C97371239091600DD463F /* main.cpp */,
+			);
+			path = "01-CubeViewer";
+			sourceTree = "<group>";
+		};
+		FF4C97381239091600DD463F /* gl */ = {
+			isa = PBXGroup;
+			children = (
+				FF4C97391239091600DD463F /* Camera3D.h */,
+				FF4C973A1239091600DD463F /* fbo.cpp */,
+				FF4C973B1239091600DD463F /* fbo.h */,
+				FF4C973C1239091600DD463F /* gl.h */,
+				FF4C973D1239091600DD463F /* GlutViewer.cpp */,
+				FF4C973E1239091600DD463F /* GlutViewer.h */,
+				FF4C973F1239091600DD463F /* Light3D.h */,
+				FF4C97401239091600DD463F /* Mesh3D.cpp */,
+				FF4C97411239091600DD463F /* Mesh3D.h */,
+				FF4C97421239091600DD463F /* Object3D.h */,
+				FF4C97431239091600DD463F /* shader.cpp */,
+				FF4C97441239091600DD463F /* shader.h */,
+				FF4C97451239091600DD463F /* texture.cpp */,
+				FF4C97461239091600DD463F /* texture.h */,
+				FF4C97471239091600DD463F /* TrackballViewer.cpp */,
+				FF4C97481239091600DD463F /* TrackballViewer.h */,
+			);
+			path = gl;
+			sourceTree = "<group>";
+		};
+		FF4C97491239091600DD463F /* math */ = {
+			isa = PBXGroup;
+			children = (
+				FF4C974A1239091600DD463F /* Matrix4.h */,
+				FF4C974B1239091600DD463F /* Vector2.h */,
+				FF4C974C1239091600DD463F /* Vector3.h */,
+				FF4C974D1239091600DD463F /* Vector4.h */,
+			);
+			path = math;
+			sourceTree = "<group>";
+		};
+		FF4C974E1239091600DD463F /* utils */ = {
+			isa = PBXGroup;
+			children = (
+				FF4C974F1239091600DD463F /* StopWatch.h */,
+			);
+			path = utils;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		8DD76F620486A84900D96B5E /* 01-CubeViewer */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1DEB923108733DC60010E9CD /* Build configuration list for PBXNativeTarget "01-CubeViewer" */;
+			buildPhases = (
+				8DD76F640486A84900D96B5E /* Sources */,
+				8DD76F660486A84900D96B5E /* Frameworks */,
+				8DD76F690486A84900D96B5E /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "01-CubeViewer";
+			productInstallPath = "$(HOME)/bin";
+			productName = "01-CubeViewer";
+			productReference = 8DD76F6C0486A84900D96B5E /* 01-CubeViewer */;
+			productType = "com.apple.product-type.tool";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		08FB7793FE84155DC02AAC07 /* Project object */ = {
+			isa = PBXProject;
+			buildConfigurationList = 1DEB923508733DC60010E9CD /* Build configuration list for PBXProject "01-CubeViewer" */;
+			compatibilityVersion = "Xcode 3.1";
+			hasScannedForEncodings = 1;
+			knownRegions = (
+				English,
+				Japanese,
+				French,
+				German,
+			);
+			mainGroup = 08FB7794FE84155DC02AAC07 /* 01-CubeViewer */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				8DD76F620486A84900D96B5E /* 01-CubeViewer */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		8DD76F640486A84900D96B5E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FF4C97501239091600DD463F /* CubeViewer.cpp in Sources */,
+				FF4C97511239091600DD463F /* main.cpp in Sources */,
+				FF4C97521239091600DD463F /* fbo.cpp in Sources */,
+				FF4C97531239091600DD463F /* GlutViewer.cpp in Sources */,
+				FF4C97541239091600DD463F /* Mesh3D.cpp in Sources */,
+				FF4C97551239091600DD463F /* shader.cpp in Sources */,
+				FF4C97561239091600DD463F /* texture.cpp in Sources */,
+				FF4C97571239091600DD463F /* TrackballViewer.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		1DEB923208733DC60010E9CD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				GCC_MODEL_TUNING = G5;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				INSTALL_PATH = /usr/local/bin;
+				PRODUCT_NAME = "01-CubeViewer";
+			};
+			name = Debug;
+		};
+		1DEB923308733DC60010E9CD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_MODEL_TUNING = G5;
+				INSTALL_PATH = /usr/local/bin;
+				PRODUCT_NAME = "01-CubeViewer";
+			};
+			name = Release;
+		};
+		1DEB923608733DC60010E9CD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PREBINDING = NO;
+				SDKROOT = "";
+			};
+			name = Debug;
+		};
+		1DEB923708733DC60010E9CD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				PREBINDING = NO;
+				SDKROOT = "";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1DEB923108733DC60010E9CD /* Build configuration list for PBXNativeTarget "01-CubeViewer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1DEB923208733DC60010E9CD /* Debug */,
+				1DEB923308733DC60010E9CD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1DEB923508733DC60010E9CD /* Build configuration list for PBXProject "01-CubeViewer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1DEB923608733DC60010E9CD /* Debug */,
+				1DEB923708733DC60010E9CD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 08FB7793FE84155DC02AAC07 /* Project object */;
+}
