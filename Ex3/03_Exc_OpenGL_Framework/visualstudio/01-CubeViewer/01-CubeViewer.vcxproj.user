@@ -1,8 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-    <LocalDebuggerWorkingDirectory>$(SolutionDir)\C:\Users\Gianni\Documents\Git\CompGraphProj\Ex3\03_Exc_OpenGL_Framework\src\exercises\01-CubeViewer</LocalDebuggerWorkingDirectory>
-    <LocalDebuggerEnvironment>PATH=%PATH%;$(SolutionDir)\C:\Users\Gianni\Documents\Git\CompGraphProj\Ex3\03_Exc_OpenGL_Framework\visualstudio\libs</LocalDebuggerEnvironment>
+    <LocalDebuggerWorkingDirectory>$(SolutionDir)\..\..\..\src\exercises\01-CubeViewer</LocalDebuggerWorkingDirectory>
+    <LocalDebuggerEnvironment>PATH=%PATH%;$(SolutionDir)\..\libs</LocalDebuggerEnvironment>
     <DebuggerFlavor>WindowsLocalDebugger</DebuggerFlavor>
   </PropertyGroup>
 </Project>
