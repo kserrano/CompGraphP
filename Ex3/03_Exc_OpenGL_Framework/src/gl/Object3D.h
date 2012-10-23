@@ -70,7 +70,7 @@ public:
 	//! translates the object in the world coordinate system
 	void translateWorld( const Vector3 & _trans )
 	{
-		Matrix4 translationMatrix = getTranslationMatrix(_trans)*m_transformationMatrix;
+		m_transformationMatrix = getTranslationMatrix(_trans)*m_transformationMatrix;
 		// ((( Exercise 3.4 )))
 	}
 	
@@ -78,7 +78,7 @@ public:
 	//! translates the object in the object coordinate systems
 	void translateObject( const Vector3 & _trans )
 	{
-		Matrix4 translationMatrix = m_transformationMatrix*getTranslationMatrix(_trans);
+		m_transformationMatrix = m_transformationMatrix*getTranslationMatrix(_trans);
 		// ((( Exercise 3.4 )))
 
 	}

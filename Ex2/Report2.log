@@ -1,9 +1,7 @@
-This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2012.9.12)  15 OCT 2012 14:13
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2012.6.9)  22 OCT 2012 17:05
 entering extended mode
 **Report2.tex
-
-("C:\Users\Kevin\Google Drive\Systèmes de Communication - BA5\Intr to Computer
- graphics\projects\Ex2\Report2.tex"
+(C:\Users\Gianni\Documents\Git\CompGraphProj\Ex2\Report2.tex
 LaTeX2e <2011/06/27>
 Babel <v3.8m> and hyphenation patterns for english, afrikaans, ancientgreek, ar
 abic, armenian, assamese, basque, bengali, bokmal, bulgarian, catalan, coptic, 
@@ -15,9 +13,9 @@ an, ngerman-x-2009-06-19, nynorsk, oriya, panjabi, pinyin, polish, portuguese,
 romanian, russian, sanskrit, serbian, slovak, slovenian, spanish, swedish, swis
 sgerman, tamil, telugu, turkish, turkmen, ukenglish, ukrainian, uppersorbian, u
 senglishmax, welsh, loaded.
-("C:\Program Files (x86)\MikTexNET\tex\latex\base\report.cls"
+("C:\Program Files\MiKTeX 2.9\tex\latex\base\report.cls"
 Document Class: report 2007/10/19 v1.4h Standard LaTeX document class
-("C:\Program Files (x86)\MikTexNET\tex\latex\base\size10.clo"
+("C:\Program Files\MiKTeX 2.9\tex\latex\base\size10.clo"
 File: size10.clo 2007/10/19 v1.4h Standard LaTeX file (size option)
 )
 \c@part=\count79
@@ -33,32 +31,32 @@ File: size10.clo 2007/10/19 v1.4h Standard LaTeX file (size option)
 \belowcaptionskip=\skip42
 \bibindent=\dimen102
 )
-("C:\Program Files (x86)\MikTexNET\tex\latex\base\inputenc.sty"
+("C:\Program Files\MiKTeX 2.9\tex\latex\base\inputenc.sty"
 Package: inputenc 2008/03/30 v1.1d Input encoding file
 \inpenc@prehook=\toks14
 \inpenc@posthook=\toks15
 
-("C:\Program Files (x86)\MikTexNET\tex\latex\base\latin1.def"
+("C:\Program Files\MiKTeX 2.9\tex\latex\base\latin1.def"
 File: latin1.def 2008/03/30 v1.1d Input encoding file
 ))
-("C:\Program Files (x86)\MikTexNET\tex\latex\ams\math\amsmath.sty"
+("C:\Program Files\MiKTeX 2.9\tex\latex\ams\math\amsmath.sty"
 Package: amsmath 2000/07/18 v2.13 AMS math features
 \@mathmargin=\skip43
 
 For additional information on amsmath, use the `?' option.
-("C:\Program Files (x86)\MikTexNET\tex\latex\ams\math\amstext.sty"
+("C:\Program Files\MiKTeX 2.9\tex\latex\ams\math\amstext.sty"
 Package: amstext 2000/06/29 v2.01
 
-("C:\Program Files (x86)\MikTexNET\tex\latex\ams\math\amsgen.sty"
+("C:\Program Files\MiKTeX 2.9\tex\latex\ams\math\amsgen.sty"
 File: amsgen.sty 1999/11/30 v2.0
 \@emptytoks=\toks16
 \ex@=\dimen103
 ))
-("C:\Program Files (x86)\MikTexNET\tex\latex\ams\math\amsbsy.sty"
+("C:\Program Files\MiKTeX 2.9\tex\latex\ams\math\amsbsy.sty"
 Package: amsbsy 1999/11/29 v1.2d
 \pmbraise@=\dimen104
 )
-("C:\Program Files (x86)\MikTexNET\tex\latex\ams\math\amsopn.sty"
+("C:\Program Files\MiKTeX 2.9\tex\latex\ams\math\amsopn.sty"
 Package: amsopn 1999/12/14 v2.01 operator names
 )
 \inf@bad=\count88
@@ -99,49 +97,49 @@ LaTeX Font Info:    Redeclaring font encoding OMS on input line 568.
 LaTeX Info: Redefining \[ on input line 2666.
 LaTeX Info: Redefining \] on input line 2667.
 )
-("C:\Program Files (x86)\MikTexNET\tex\latex\amsfonts\amsfonts.sty"
+("C:\Program Files\MiKTeX 2.9\tex\latex\amsfonts\amsfonts.sty"
 Package: amsfonts 2009/06/22 v3.00 Basic AMSFonts support
 \symAMSa=\mathgroup4
 \symAMSb=\mathgroup5
 LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
 (Font)                  U/euf/m/n --> U/euf/b/n on input line 96.
 )
-("C:\Program Files (x86)\MikTexNET\tex\latex\graphics\color.sty"
+("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\color.sty"
 Package: color 2005/11/14 v1.0j Standard LaTeX Color (DPC)
 
-("C:\Program Files (x86)\MikTexNET\tex\latex\00miktex\color.cfg"
+("C:\Program Files\MiKTeX 2.9\tex\latex\00miktex\color.cfg"
 File: color.cfg 2007/01/18 v1.5 color configuration of teTeX/TeXLive
 )
 Package color Info: Driver file: pdftex.def on input line 130.
 
-("C:\Program Files (x86)\MikTexNET\tex\latex\pdftex-def\pdftex.def"
+("C:\Program Files\MiKTeX 2.9\tex\latex\pdftex-def\pdftex.def"
 File: pdftex.def 2011/05/27 v0.06d Graphics/color for pdfTeX
 
-("C:\Program Files (x86)\MikTexNET\tex\generic\oberdiek\infwarerr.sty"
+("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\infwarerr.sty"
 Package: infwarerr 2010/04/08 v1.3 Providing info/warning/error messages (HO)
 )
-("C:\Program Files (x86)\MikTexNET\tex\generic\oberdiek\ltxcmds.sty"
+("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\ltxcmds.sty"
 Package: ltxcmds 2011/11/09 v1.22 LaTeX kernel commands for general use (HO)
 )
 \Gread@gobject=\count100
 ))
-("C:\Program Files (x86)\MikTexNET\tex\latex\amsfonts\amssymb.sty"
+("C:\Program Files\MiKTeX 2.9\tex\latex\amsfonts\amssymb.sty"
 Package: amssymb 2009/06/22 v3.00
 )
-("C:\Program Files (x86)\MikTexNET\tex\latex\graphics\graphicx.sty"
+("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\graphicx.sty"
 Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
 
-("C:\Program Files (x86)\MikTexNET\tex\latex\graphics\keyval.sty"
+("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\keyval.sty"
 Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
 \KV@toks@=\toks21
 )
-("C:\Program Files (x86)\MikTexNET\tex\latex\graphics\graphics.sty"
+("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\graphics.sty"
 Package: graphics 2009/02/05 v1.0o Standard LaTeX Graphics (DPC,SPQR)
 
-("C:\Program Files (x86)\MikTexNET\tex\latex\graphics\trig.sty"
+("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\trig.sty"
 Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
 )
-("C:\Program Files (x86)\MikTexNET\tex\latex\00miktex\graphics.cfg"
+("C:\Program Files\MiKTeX 2.9\tex\latex\00miktex\graphics.cfg"
 File: graphics.cfg 2007/01/18 v1.5 graphics configuration of teTeX/TeXLive
 )
 Package graphics Info: Driver file: pdftex.def on input line 91.
@@ -149,7 +147,7 @@ Package graphics Info: Driver file: pdftex.def on input line 91.
 \Gin@req@height=\dimen112
 \Gin@req@width=\dimen113
 )
-("C:\Program Files (x86)\MikTexNET\tex\latex\fancyhdr\fancyhdr.sty"
+("C:\Program Files\MiKTeX 2.9\tex\latex\fancyhdr\fancyhdr.sty"
 \fancy@headwidth=\skip46
 \f@ncyO@elh=\skip47
 \f@ncyO@erh=\skip48
@@ -160,8 +158,7 @@ Package graphics Info: Driver file: pdftex.def on input line 91.
 \f@ncyO@olf=\skip53
 \f@ncyO@orf=\skip54
 )
-("C:\Users\Kevin\Google Drive\Systèmes de Communication - BA5\Intr to Computer
- graphics\projects\Ex2\Report2.aux")
+(C:\Users\Gianni\Documents\Git\CompGraphProj\Ex2\Report2.aux)
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 15.
 LaTeX Font Info:    ... okay on input line 15.
 LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 15.
@@ -175,7 +172,7 @@ LaTeX Font Info:    ... okay on input line 15.
 LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 15.
 LaTeX Font Info:    ... okay on input line 15.
 
-("C:\Program Files (x86)\MikTexNET\tex\context\base\supp-pdf.mkii"
+("C:\Program Files\MiKTeX 2.9\tex\context\base\supp-pdf.mkii"
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count101
 \scratchdimen=\dimen114
@@ -190,16 +187,16 @@ LaTeX Font Info:    ... okay on input line 15.
 \everyMPtoPDFconversion=\toks23
 )
 LaTeX Font Info:    Try loading font information for U+msa on input line 16.
- ("C:\Program Files (x86)\MikTexNET\tex\latex\amsfonts\umsa.fd"
+ ("C:\Program Files\MiKTeX 2.9\tex\latex\amsfonts\umsa.fd"
 File: umsa.fd 2009/06/22 v3.00 AMS symbols A
 )
 LaTeX Font Info:    Try loading font information for U+msb on input line 16.
 
-("C:\Program Files (x86)\MikTexNET\tex\latex\amsfonts\umsb.fd"
+("C:\Program Files\MiKTeX 2.9\tex\latex\amsfonts\umsb.fd"
 File: umsb.fd 2009/06/22 v3.00 AMS symbols B
 ) [1
 
-{C:/Users/Kevin/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}]
+{C:/ProgramData/MiKTeX/2.9/pdftex/config/pdftex.map}]
 <triangleNormals.png, id=7, 314.67563pt x 201.00093pt>
 File: triangleNormals.png Graphic file (type png)
 
@@ -228,21 +225,19 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[1 <C:/Users/Kevin/Google Drive/Systèmes de Communication - BA5/Intr to Comput
-er graphics/projects/Ex2/triangleNormals.png> <C:/Users/Kevin/Google Drive/Syst
-èmes de Communication - BA5/Intr to Computer graphics/projects/Ex2/angleNL.png
->] <angleRV.png, id=21, 153.57375pt x 97.86563pt>
+[1 <C:/Users/Gianni/Documents/Git/CompGraphProj/Ex2/triangleNormals.png> <C:/Us
+ers/Gianni/Documents/Git/CompGraphProj/Ex2/angleNL.png>]
+<angleRV.png, id=21, 153.57375pt x 97.86563pt>
 File: angleRV.png Graphic file (type png)
  <use angleRV.png>
 Package pdftex.def Info: angleRV.png used on input line 53.
 (pdftex.def)             Requested size: 103.50105pt x 65.95638pt.
- [2 <C:/Users/Kevin/Google Drive/Systèmes de Communication - BA5/Intr to Compu
-ter graphics/projects/Ex2/02_Exc_Raytracing_Framework/Image_Diffuse_Model.png> 
-<C:/Users/Kevin/Google Drive/Systèmes de Communication - BA5/Intr to Computer 
-graphics/projects/Ex2/angleRV.png>]
+ [2 <C:/Users/Gianni/Documents/Git/CompGraphProj/Ex2/02_Exc_Raytracing_Framewor
+k/Image_Diffuse_Model.png> <C:/Users/Gianni/Documents/Git/CompGraphProj/Ex2/ang
+leRV.png>]
 LaTeX Font Info:    Try loading font information for OMS+cmr on input line 59.
 
-("C:\Program Files (x86)\MikTexNET\tex\latex\base\omscmr.fd"
+("C:\Program Files\MiKTeX 2.9\tex\latex\base\omscmr.fd"
 File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
@@ -255,8 +250,8 @@ File: 02_Exc_Raytracing_Framework/2_1_3.png Graphic file (type png)
 Package pdftex.def Info: 02_Exc_Raytracing_Framework/2_1_3.png used on input li
 ne 69.
 (pdftex.def)             Requested size: 172.5pt x 172.50455pt.
- [3 <C:/Users/Kevin/Google Drive/Systèmes de Communication - BA5/Intr to Compu
-ter graphics/projects/Ex2/02_Exc_Raytracing_Framework/2_1_3.png>]
+ [3 <C:/Users/Gianni/Documents/Git/CompGraphProj/Ex2/02_Exc_Raytracing_Framewor
+k/2_1_3.png>]
 <02_Exc_Raytracing_Framework/2_2_1.png, id=32, 338.76563pt x 338.76563pt>
 File: 02_Exc_Raytracing_Framework/2_2_1.png Graphic file (type png)
 
@@ -264,32 +259,113 @@ File: 02_Exc_Raytracing_Framework/2_2_1.png Graphic file (type png)
 Package pdftex.def Info: 02_Exc_Raytracing_Framework/2_2_1.png used on input li
 ne 78.
 (pdftex.def)             Requested size: 172.5pt x 172.50455pt.
- [4 <C:/Users/Kevin/Google Drive/Systèmes de Communication - BA5/Intr to Compu
-ter graphics/projects/Ex2/02_Exc_Raytracing_Framework/2_2_1.png>]
-("C:\Users\Kevin\Google Drive\Systèmes de Communication - BA5\Intr to Computer
- graphics\projects\Ex2\Report2.aux") ) 
+
+Overfull \hbox (50.22833pt too wide) in paragraph at lines 81--82
+\OT1/cmr/m/n/10 ject $\OML/cmm/m/it/10 IntersectionData$ \OT1/cmr/m/n/10 with $
+\OML/cmm/m/it/10 iData \OMS/cmsy/m/n/10 ! \OML/cmm/m/it/10 reflectionPercentage
+ \OT1/cmr/m/n/10 = \OML/cmm/m/it/10 getReflectionPercentage\OT1/cmr/m/n/10 ();$
+
+ []
+
+<recuRay.png, id=33, 292.09125pt x 149.8097pt>
+File: recuRay.png Graphic file (type png)
+ <use recuRay.png>
+Package pdftex.def Info: recuRay.png used on input line 90.
+(pdftex.def)             Requested size: 137.9979pt x 70.77858pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[4 <C:/Users/Gianni/Documents/Git/CompGraphProj/Ex2/02_Exc_Raytracing_Framework
+/2_2_1.png>]
+Overfull \hbox (28.70686pt too wide) detected at line 93
+\OML/cmm/m/it/10 reflectionPercentage \OMS/cmsy/m/n/10  \OML/cmm/m/it/10 refle
+ctedShading \OT1/cmr/m/n/10 + (1 \OMS/cmsy/m/n/10   \OML/cmm/m/it/10 reflection
+Percentage\OT1/cmr/m/n/10 ) \OMS/cmsy/m/n/10  \OML/cmm/m/it/10 objectShading
+ []
+
+
+Overfull \hbox (3.20782pt too wide) in paragraph at lines 93--94
+\OT1/cmr/m/n/10 where $\OML/cmm/m/it/10 reflectedShading$ \OT1/cmr/m/n/10 is th
+e re-cur-sion step and $\OML/cmm/m/it/10 objectShading$ \OT1/cmr/m/n/10 is the 
+m[]shader. 
+ []
+
+[5 <C:/Users/Gianni/Documents/Git/CompGraphProj/Ex2/recuRay.png>]
+<02_Exc_Raytracing_Framework/rec0.png, id=41, 301.125pt x 301.125pt>
+File: 02_Exc_Raytracing_Framework/rec0.png Graphic file (type png)
+
+<use 02_Exc_Raytracing_Framework/rec0.png>
+Package pdftex.def Info: 02_Exc_Raytracing_Framework/rec0.png used on input lin
+e 98.
+(pdftex.def)             Requested size: 172.5pt x 172.50684pt.
+
+<02_Exc_Raytracing_Framework/rec1.png, id=42, 301.125pt x 301.125pt>
+File: 02_Exc_Raytracing_Framework/rec1.png Graphic file (type png)
+
+<use 02_Exc_Raytracing_Framework/rec1.png>
+Package pdftex.def Info: 02_Exc_Raytracing_Framework/rec1.png used on input lin
+e 99.
+(pdftex.def)             Requested size: 172.5pt x 172.50684pt.
+
+<02_Exc_Raytracing_Framework/rec2.png, id=43, 301.125pt x 301.125pt>
+File: 02_Exc_Raytracing_Framework/rec2.png Graphic file (type png)
+
+<use 02_Exc_Raytracing_Framework/rec2.png>
+Package pdftex.def Info: 02_Exc_Raytracing_Framework/rec2.png used on input lin
+e 100.
+(pdftex.def)             Requested size: 172.5pt x 172.50684pt.
+
+<02_Exc_Raytracing_Framework/rec8.png, id=44, 301.125pt x 301.125pt>
+File: 02_Exc_Raytracing_Framework/rec8.png Graphic file (type png)
+
+<use 02_Exc_Raytracing_Framework/rec8.png>
+Package pdftex.def Info: 02_Exc_Raytracing_Framework/rec8.png used on input lin
+e 101.
+(pdftex.def)             Requested size: 172.5pt x 172.50684pt.
+
+Overfull \hbox (2.22221pt too wide) in paragraph at lines 98--102
+[][] []
+ []
+
+
+Overfull \hbox (2.22221pt too wide) in paragraph at lines 98--102
+[] [] 
+ []
+
+[6 <C:/Users/Gianni/Documents/Git/CompGraphProj/Ex2/02_Exc_Raytracing_Framework
+/rec0.png> <C:/Users/Gianni/Documents/Git/CompGraphProj/Ex2/02_Exc_Raytracing_F
+ramework/rec1.png> <C:/Users/Gianni/Documents/Git/CompGraphProj/Ex2/02_Exc_Rayt
+racing_Framework/rec2.png> <C:/Users/Gianni/Documents/Git/CompGraphProj/Ex2/02_
+Exc_Raytracing_Framework/rec8.png>]
+<Cornell.png, id=53, 564.60938pt x 564.60938pt>
+File: Cornell.png Graphic file (type png)
+ <use Cornell.png>
+Package pdftex.def Info: Cornell.png used on input line 111.
+(pdftex.def)             Requested size: 172.5pt x 172.50282pt.
+ [7 <C:/Users/Gianni/Documents/Git/CompGraphProj/Ex2/Cornell.png>]
+(C:\Users\Gianni\Documents\Git\CompGraphProj\Ex2\Report2.aux) ) 
 Here is how much of TeX's memory you used:
- 2298 strings out of 494045
- 29601 string characters out of 3147581
+ 2327 strings out of 494045
+ 29692 string characters out of 3148385
  85704 words of memory out of 3000000
- 5566 multiletter control sequences out of 15000+200000
+ 5591 multiletter control sequences out of 15000+200000
  11815 words of font info for 46 fonts, out of 3000000 for 9000
  715 hyphenation exceptions out of 8191
  27i,12n,43p,1084b,242s stack positions out of 5000i,500n,10000p,200000b,50000s
-<C:/Program Files (x86)/MikTexNET/fonts/t
-ype1/public/amsfonts/cm/cmbx10.pfb><C:/Program Files (x86)/MikTexNET/fonts/type
-1/public/amsfonts/cm/cmbx12.pfb><C:/Program Files (x86)/MikTexNET/fonts/type1/p
-ublic/amsfonts/cm/cmbx7.pfb><C:/Program Files (x86)/MikTexNET/fonts/type1/publi
-c/amsfonts/cm/cmmi10.pfb><C:/Program Files (x86)/MikTexNET/fonts/type1/public/a
-msfonts/cm/cmmi7.pfb><C:/Program Files (x86)/MikTexNET/fonts/type1/public/amsfo
-nts/cm/cmr10.pfb><C:/Program Files (x86)/MikTexNET/fonts/type1/public/amsfonts/
-cm/cmr12.pfb><C:/Program Files (x86)/MikTexNET/fonts/type1/public/amsfonts/cm/c
-mr17.pfb><C:/Program Files (x86)/MikTexNET/fonts/type1/public/amsfonts/cm/cmr7.
-pfb><C:/Program Files (x86)/MikTexNET/fonts/type1/public/amsfonts/cm/cmsy10.pfb
->
-Output written on Report2.pdf (5 pages, 296042 bytes).
+<C:/Program File
+s/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Program Files/MiKTeX
+ 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Program Files/MiKTeX 2.9/fon
+ts/type1/public/amsfonts/cm/cmbx7.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/
+public/amsfonts/cm/cmmi10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/a
+msfonts/cm/cmmi7.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/c
+m/cmr10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.p
+fb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Pr
+ogram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Program File
+s/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
+Output written on Report2.pdf (8 pages, 812947 bytes).
 PDF statistics:
- 68 PDF objects out of 1000 (max. 8388607)
+ 90 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 31 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 61 words of extra memory for PDF output out of 10000 (max. 10000000)
 

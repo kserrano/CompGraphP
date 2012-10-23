@@ -1,11 +1,12 @@
-﻿Build started 23.10.2012 22:35:36.
+﻿Build started 23.10.2012 23:20:09.
      1>Project "C:\Users\Gianni\Documents\Git\CompGraphProj\Ex3\03_Exc_OpenGL_Framework\visualstudio\01-CubeViewer\01-CubeViewer.vcxproj" on node 2 (Build target(s)).
      1>ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /I"C:\Users\Gianni\Documents\Git\CompGraphProj\Ex3\03_Exc_OpenGL_Framework\visualstudio\01-CubeViewer\\..\libs" /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _USE_MATH_DEFINES /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt "..\..\src\exercises\01-CubeViewer\CubeViewer.cpp" "..\..\src\exercises\01-CubeViewer\main.cpp" ..\..\src\gl\TrackballViewer.cpp
+         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /I"C:\Users\Gianni\Documents\Git\CompGraphProj\Ex3\03_Exc_OpenGL_Framework\visualstudio\01-CubeViewer\\..\libs" /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _USE_MATH_DEFINES /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt "..\..\src\exercises\01-CubeViewer\CubeViewer.cpp" "..\..\src\exercises\01-CubeViewer\main.cpp" ..\..\src\gl\Mesh3D.cpp ..\..\src\gl\TrackballViewer.cpp
          CubeViewer.cpp
          Generating Code...
          Compiling...
          TrackballViewer.cpp
+         Mesh3D.cpp
          main.cpp
          Generating Code...
        Link:
@@ -22,4 +23,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:00:06.08
+Time Elapsed 00:00:17.99
