@@ -52,7 +52,16 @@ GlutViewer(const char* _title, int _width, int _height)
   
   //Init glew for windows
   #ifdef _WIN32
-    glewInit();
+	GLenum init= glewInit();
+	if(init==GLEW_OK){
+		std::cout << "Glew OK" << std::endl;
+		std::cout << glewGetErrorString(init) <<std::endl;
+	}
+	else{
+		
+		std::cout << "Glew pas OK" << std::endl;
+		std::cout << glewGetErrorString(init) <<std::endl;
+	};
   #endif
 
   // create popupmenu
