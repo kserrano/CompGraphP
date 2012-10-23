@@ -127,7 +127,7 @@ public: //------------------------------------------------ public methods
         right = 1;*/
 
 		double halfHeight = tan(m_fovy*M_PI/360)*getNearPlane();
-		double halfWidth = halfHeight * ((double)getWidth()/(double)getHeight()); //ratio
+		double halfWidth = halfHeight * ((double)getHeight()/(double)getWidth()); //ratio
 		bottom = -halfHeight;
         top = halfHeight;
         left = -halfWidth;
@@ -154,7 +154,7 @@ protected:
 		m_perspectiveProjectionMatrix = Matrix4(
                                                 (2*n)/(r-l), 0, (r+l)/(r-l), 0,
                                                 0, (2*n)/(t-b), (t+b)/(t-b), 0,
-                                                0, 0, -(f+b)/(f-n), -(2*n*f)/(f-n),
+                                                0, 0, -(f+n)/(f-n), -(2*n*f)/(f-n),
                                                 0, 0, -1, 0
                                                 );
 	}
