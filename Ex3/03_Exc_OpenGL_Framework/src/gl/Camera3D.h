@@ -126,8 +126,8 @@ public: //------------------------------------------------ public methods
         left = -1;
         right = 1;*/
 
-		double halfHeight = tan(m_fovy*M_PI/180);
-		double halfWidth = halfHeight * ((double)getWidth()/(double)getHeight());
+		double halfHeight = tan(m_fovy*M_PI/360)*getNearPlane();
+		double halfWidth = halfHeight * ((double)getWidth()/(double)getHeight()); //ratio
 		bottom = -halfHeight;
         top = halfHeight;
         left = -halfWidth;
