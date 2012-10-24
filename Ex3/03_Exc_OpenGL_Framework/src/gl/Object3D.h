@@ -86,7 +86,7 @@ public:
 	//! scales the object in the world coordinate system
 	void scaleWorld( const Vector3 & _scl )
 	{
-        m_transformationMatrix= getScaleMatrix(_scl)*m_transformationMatrix;
+       m_transformationMatrix= getScaleMatrix(_scl)*m_transformationMatrix;
 		// ((( Exercise 3.4 )))
 	}
 
@@ -116,14 +116,14 @@ public:
 	//! rotates the object around an arbitrary axis in world coordinate system
 	void rotateAroundAxisWorld( const Vector3 & _pt, const Vector3& _axis, float _angle )
 	{
-        m_transformationMatrix = (getTranslationMatrix(-_pt)*getRotationMatrix(_axis,_angle)*getTranslationMatrix(_pt))*m_transformationMatrix;
+        m_transformationMatrix = ((getTranslationMatrix(-_pt)*getRotationMatrix(_axis,_angle))*getTranslationMatrix(_pt))*m_transformationMatrix;
 		// ((( Exercise 3.4 )))
 	}
 
 	//! rotates the object around an arbitrary axis in object coordinate system
 	void rotateAroundAxisObject( const Vector3 & _pt, const Vector3& _axis, float _angle )
 	{
-        m_transformationMatrix =  m_transformationMatrix*(getTranslationMatrix(-_pt)*getRotationMatrix(_axis,_angle)*getTranslationMatrix(_pt));
+        m_transformationMatrix =  m_transformationMatrix*((getTranslationMatrix(-_pt)*getRotationMatrix(_axis,_angle))*getTranslationMatrix(_pt));
 		// ((( Exercise 3.4 )))
 	}
 
@@ -167,17 +167,17 @@ public:
 		double ux = axis.x;
 		double uy = axis.y;
 		double uz = axis.z;
-		//Matrix4 rotationMatrix;
+		Matrix4 rotationMatrix;
 
 		// ((( Exercise 3.4 )))
-		//rotationMatrix.loadIdentity();
+		rotationMatrix.loadIdentity();
         
 		return Matrix4 (
-						 cosa + ux*ux*(1-cosa), ux*uy*(1-cosa)-uz*sina, ux*uz*(1-cosa)+uy*sina, 0,
-						 uy*ux*(1-cosa)+uz*sina, cosa + uy*uy*(1-cosa), uy*uz*(1-cosa)-ux*sina, 0,
-						 uz*ux*(1-cosa)-uy*sina, uz*uy*(1-cosa)+ux*sina, cosa + uz*uz*(1-cosa), 0,
-						 0, 0, 0, 1
-						 );;
+					   cosa + ux*ux*(1-cosa), ux*uy*(1-cosa)-uz*sina, ux*uz*(1-cosa)+uy*sina, 0,
+		  			   uy*ux*(1-cosa)+uz*sina, cosa + uy*uy*(1-cosa), uy*uz*(1-cosa)-ux*sina, 0,
+					   uz*ux*(1-cosa)-uy*sina, uz*uy*(1-cosa)+ux*sina, cosa + uz*uz*(1-cosa), 0,
+					   0, 0, 0, 1
+					   );;
 	}
 	
 protected:
