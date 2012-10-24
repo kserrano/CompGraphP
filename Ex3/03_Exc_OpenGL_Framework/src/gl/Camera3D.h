@@ -130,8 +130,8 @@ public: //------------------------------------------------ public methods
 		double halfWidth = halfHeight * ((double)getHeight()/(double)getWidth()); //ratio
 		bottom = -halfHeight;
         top = halfHeight;
-        left = -halfWidth;
-        right = halfWidth;
+        left = halfWidth;
+        right = -halfWidth;
     }
 	
 	
