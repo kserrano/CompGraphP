@@ -14,6 +14,9 @@
 #include "SolarViewer.h"
 #include "../../utils/Mesh3DReader.h"
 
+//== DEFINES =================================================================
+#define drand48() (rand()/RAND_MAX)
+
 //== IMPLEMENTATION ========================================================== 
 
 
@@ -151,8 +154,7 @@ load_mesh(const std::string& filenameObj, MeshType type)
 				m_Sun.calculateVertexNormals();
 			
 			//Exercise 4.2: Scale the sun using the attribute m_sunScale
-
-			
+			m_Sun.scaleWorld(Vector3(m_sunScale, m_sunScale, m_sunScale));
 			//Exercise 4.4: Set the light position to the center of the sun
 			
 			m_showTextureSun = m_Sun.hasUvTextureCoord();
@@ -166,7 +168,9 @@ load_mesh(const std::string& filenameObj, MeshType type)
 				m_Earth.calculateVertexNormals();
 			
 			//Exercise 4.2: Scale and translate the earth using the attributes m_earthScale and m_earthTrans
-			
+			m_Earth.scaleWorld(Vector3(m_earthScale, m_earthScale, m_earthScale));
+			m_Earth.translateWorld(m_earthTrans);
+
 			m_showTextureEarth = m_Earth.hasUvTextureCoord();
 			break;
 		case MOON:
@@ -178,7 +182,9 @@ load_mesh(const std::string& filenameObj, MeshType type)
 				m_Moon.calculateVertexNormals();
 			
 			//Exercise 4.2: Scale and translate the moon using the attributes m_moonScale and m_moonTrans
-			
+			m_Moon.scaleWorld(Vector3(m_moonScale, m_moonScale, m_moonScale));
+			m_Moon.translateWorld(m_moonTrans);
+
 			m_showTextureMoon = m_Moon.hasUvTextureCoord();
 			break;
 		case MERCURY:

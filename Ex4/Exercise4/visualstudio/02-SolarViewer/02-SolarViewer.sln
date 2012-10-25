@@ -1,7 +1,7 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 9.00
-# Visual Studio 2005
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "02-SolarViewer", "02-SolarViewer\02-SolarViewer.vcproj", "{D1DF18A7-1C0A-4BF9-B63B-A24995250A4E}"
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "02-SolarViewer", "02-SolarViewer\02-SolarViewer.vcxproj", "{D1DF18A7-1C0A-4BF9-B63B-A24995250A4E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
