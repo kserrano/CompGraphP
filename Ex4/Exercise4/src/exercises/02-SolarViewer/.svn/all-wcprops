@@ -1,0 +1,59 @@
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/lgg-intrograph/!svn/ver/108/trunk/lgg-intrograph/src/exercises/02-SolarViewer
+END
+phong.fs
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/lgg-intrograph/!svn/ver/96/trunk/lgg-intrograph/src/exercises/02-SolarViewer/phong.fs
+END
+phong.vs
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/lgg-intrograph/!svn/ver/96/trunk/lgg-intrograph/src/exercises/02-SolarViewer/phong.vs
+END
+SolarViewer.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/lgg-intrograph/!svn/ver/108/trunk/lgg-intrograph/src/exercises/02-SolarViewer/SolarViewer.cpp
+END
+main.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/lgg-intrograph/!svn/ver/104/trunk/lgg-intrograph/src/exercises/02-SolarViewer/main.cpp
+END
+tex.fs
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/lgg-intrograph/!svn/ver/99/trunk/lgg-intrograph/src/exercises/02-SolarViewer/tex.fs
+END
+tex.vs
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/lgg-intrograph/!svn/ver/104/trunk/lgg-intrograph/src/exercises/02-SolarViewer/tex.vs
+END
+SolarViewer.h
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/lgg-intrograph/!svn/ver/104/trunk/lgg-intrograph/src/exercises/02-SolarViewer/SolarViewer.h
+END
+diffuse.fs
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/lgg-intrograph/!svn/ver/105/trunk/lgg-intrograph/src/exercises/02-SolarViewer/diffuse.fs
+END
+diffuse.vs
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/lgg-intrograph/!svn/ver/104/trunk/lgg-intrograph/src/exercises/02-SolarViewer/diffuse.vs
+END

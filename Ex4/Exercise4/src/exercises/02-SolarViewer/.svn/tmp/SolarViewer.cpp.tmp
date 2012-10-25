@@ -1,0 +1,429 @@
+//=============================================================================
+//                                                                            
+//   Exercise code for the lecture
+//                                                                            
+//=============================================================================
+//=============================================================================
+//
+//  CLASS MeshViewer - IMPLEMENTATION
+//
+//=============================================================================
+
+//== INCLUDES =================================================================
+
+#include "SolarViewer.h"
+#include "../../utils/Mesh3DReader.h"
+
+//== IMPLEMENTATION ========================================================== 
+
+
+SolarViewer::
+SolarViewer(const char* _title, int _width, int _height)
+: TrackballViewer(_title, _width, _height)
+{
+  init();
+}
+
+
+//-----------------------------------------------------------------------------
+
+
+void 
+SolarViewer::
+init()
+{
+  // initialize parent
+  TrackballViewer::init();
+
+  // set camera to look at world coordinate center
+  set_scene_pos(Vector3(0.0, 0.0, 0.0), 2.0);
+	
+  // load mesh shader
+	m_meshShaderPhong.create("phong.vs", "phong.fs");
+	m_meshShaderDiffuse.create("diffuse.vs", "diffuse.fs");
+	m_meshShaderTexture.create("tex.vs","tex.fs");
+	
+	m_showTextureStars = false;
+	m_showTextureSun = false;
+	m_showTextureEarth = false;
+	m_showTextureMoon = false;
+	
+	m_moonScale = 50.0;
+	m_earthScale = m_moonScale * 2.0;
+	m_sunScale = m_moonScale * 5.0;
+	m_starsScale = m_moonScale * 100.0;
+	
+	m_earthTrans = m_sunScale + 750;
+	m_moonTrans = m_earthTrans + m_earthScale + 100;
+	
+	currentTime = 0.0;
+	isWatchOn = false;
+<<<<<<< .mine
+	
+	set_lighting();
+=======
+	
+	daysPerSecond = 1;
+	totalDaysElapsed = 0;
+	m_geocentric = false;
+>>>>>>> .r99
+}
+
+
+//-----------------------------------------------------------------------------
+
+void
+SolarViewer::
+loadMesh(const std::string& filenameObj, MeshType type)
+{
+	Vector3 bbmin, bbmax;
+	double radius;
+	Vector3 center;
+	switch(type)
+	{
+		case STARS:
+			// load mesh from obj
+			Mesh3DReader::read( filenameObj, m_Stars);
+			
+			// calculate normals
+			if(!m_Stars.hasNormals())
+				m_Stars.calculateVertexNormals();
+			
+			
+			m_Stars.calculateBoundingBox(bbmin, bbmax);
+			
+			radius = 0.5*(bbmin - bbmax).length();
+			center = 0.5*(bbmin + bbmax);
+			
+			m_Stars.scaleObject(Vector3(m_starsScale, m_starsScale, m_starsScale));
+			radius *= 700.0;
+			
+			set_scene_pos(center, radius);
+			
+			m_showTextureStars = m_Stars.hasUvTextureCoord();
+			
+			break;
+		case SUN:
+			// load mesh from obj
+			Mesh3DReader::read( filenameObj, m_Sun);
+			
+			// calculate normals
+			if(!m_Sun.hasNormals())
+				m_Sun.calculateVertexNormals();
+			
+			//scale object
+			m_Sun.scaleObject(Vector3(m_sunScale, m_sunScale, m_sunScale));
+			
+			// set light position to sun
+			m_light.setIdentity();
+			m_light.translateWorld(m_Sun.origin());
+			
+			m_showTextureSun = m_Sun.hasUvTextureCoord();
+			break;
+		case EARTH:
+			// load mesh from obj
+			Mesh3DReader::read( filenameObj, m_Earth);
+			
+			// calculate normals
+			if(!m_Earth.hasNormals())
+				m_Earth.calculateVertexNormals();
+			
+			//scale object
+			m_Earth.scaleObject(Vector3(m_earthScale, m_earthScale, m_earthScale));
+			
+			//translate
+			m_Earth.translateWorld(Vector3(m_earthTrans,0.0,0.0));
+			
+			m_showTextureEarth = m_Earth.hasUvTextureCoord();
+			break;
+		case MOON:
+			// load mesh from obj
+			Mesh3DReader::read( filenameObj, m_Moon);
+			
+			// calculate normals
+			if(!m_Moon.hasNormals())
+				m_Moon.calculateVertexNormals();
+			
+			//scale object
+			m_Moon.scaleObject(Vector3(m_moonScale, m_moonScale, m_moonScale));
+			
+			//translate object
+			m_Moon.translateWorld(Vector3(m_moonTrans,0.0,0.0));
+			
+			m_showTextureMoon = m_Moon.hasUvTextureCoord();
+			break;
+		default:
+			break;
+	}
+	
+}
+
+//-----------------------------------------------------------------------------
+
+void SolarViewer::set_lighting(void) {
+	glEnable(GL_LIGHTING);
+    glEnable(GL_LIGHT0);
+	glEnable(GL_LIGHT1);
+	
+    GLfloat DiffuseLight[] = {1.0, 1.0, 1.0}; 
+	
+    GLfloat AmbientLight[] = {0.1, 0.1, 0.1};
+    GLfloat SpecularLight[] = {1.0, 1.0, 1.0};
+    
+    glLightfv (GL_LIGHT0, GL_SPECULAR, SpecularLight); 
+    glLightfv (GL_LIGHT0, GL_DIFFUSE, DiffuseLight); 
+    glLightfv (GL_LIGHT0, GL_AMBIENT, AmbientLight); 
+	
+	glLightfv (GL_LIGHT1, GL_DIFFUSE, DiffuseLight);
+}
+
+//-------------------------------------------------------------------------------
+
+void
+SolarViewer::
+keyboard(int key, int x, int y)
+{
+	switch (key)
+	{			
+		case 'h':
+			printf("Help:\n");
+			printf("'h'\t-\thelp\n");
+			printf("'t'\t-\ttoggle texture\n");
+			printf("'arrow keys\t-\tchange speed of rotation\n");
+			break;
+		case 't':
+			m_showTextureStars = !m_showTextureStars;
+			if(!m_Stars.hasUvTextureCoord()) m_showTextureStars = false;
+			
+			m_showTextureSun = !m_showTextureSun;
+			if(!m_Sun.hasUvTextureCoord()) m_showTextureSun = false;
+			
+			m_showTextureEarth = !m_showTextureEarth;
+			if(!m_Earth.hasUvTextureCoord()) m_showTextureEarth = false;
+			
+			m_showTextureMoon = !m_showTextureMoon;
+			if(!m_Moon.hasUvTextureCoord()) m_showTextureMoon = false;
+			break;
+		case 'g':
+			m_geocentric = !m_geocentric;
+			break;
+		case ' ':
+			if(isWatchOn)
+			{
+				watch.stop();
+				currentTime = 0.0;
+			}
+			else 
+			{
+				watch.start();
+			}
+
+			isWatchOn = !isWatchOn;
+			break;
+		default:
+			TrackballViewer::special(key, x, y);
+			break;
+	}
+	
+	glutPostRedisplay();
+}
+
+//-----------------------------------------------------------------------------
+
+
+void
+SolarViewer::
+special(int key, int x, int y)
+{
+	switch (key)
+	{			
+		case GLUT_KEY_UP:
+			daysPerSecond += 0.01;
+			break;
+		case GLUT_KEY_DOWN:
+			daysPerSecond -= 0.01;
+			if(daysPerSecond < 0.01)
+				daysPerSecond = 0.01;
+			break;
+		default:
+			TrackballViewer::special(key, x, y);
+			break;
+	}
+	
+	glutPostRedisplay();
+}
+
+
+//-----------------------------------------------------------------------------
+
+void SolarViewer::idle()
+{
+	if(isWatchOn)
+	{
+		float prevTime = currentTime;
+		currentTime = watch.stop();
+		float daysElapsed = daysPerSecond * (currentTime-prevTime);
+		totalDaysElapsed += daysElapsed;
+		
+		m_Earth.rotateObject(Vector3(0.0,1.0,0.0), daysElapsed * 2.0*M_PI/180.0);
+		m_Moon.rotateAroundAxisWorld(m_Earth.origin(), Vector3(0.0,1.0,0.0), 1.0/29.53*daysElapsed*2.0*M_PI/180.0);
+		m_Earth.rotateAroundAxisWorld(m_Sun.origin(), Vector3(0.0,1.0,0.0),1.0/365.0*daysElapsed*2.0*M_PI/180.0);
+		m_Moon.rotateAroundAxisWorld(m_Sun.origin(), Vector3(0.0,1.0,0.0), 1.0/365.0*daysElapsed*2.0*M_PI/180.0);
+		glutPostRedisplay();
+	}
+}
+
+//-----------------------------------------------------------------------------
+
+void 
+SolarViewer::
+draw_scene(DrawMode _draw_mode)
+{
+	Vector3 sunToEarthVector = m_Earth.origin() - m_Sun.origin();
+	if(m_geocentric) {
+		m_camera.translateWorld(sunToEarthVector);
+		m_camera.rotateAroundAxisWorld(m_Earth.origin(), Vector3(0.0,1.0,0.0),totalDaysElapsed * 2.0*M_PI/180.0 );
+		
+	}
+	// clear screen
+	glEnable(GL_DEPTH_TEST);
+	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+	glDisable(GL_CULL_FACE);
+	glEnable(GL_MULTISAMPLE);
+	
+	//m_meshShaderPhong.bind(); 
+	m_meshShaderTexture.bind(); 
+	
+	// set parameters
+	m_meshShaderPhong.setMatrix4x4Uniform("worldcamera", m_camera.getTransformation().Inverse());
+	m_meshShaderPhong.setMatrix4x4Uniform("projection", m_camera.getProjectionMatrix());
+	Vector3 lightPosInCamera = m_camera.getTransformation().Inverse() * m_light.origin();
+	m_meshShaderPhong.setVector3Uniform("lightposition", lightPosInCamera.x, lightPosInCamera.y, lightPosInCamera.z );
+	
+	m_meshShaderTexture.setMatrix4x4Uniform("worldcamera", m_camera.getTransformation().Inverse());
+	m_meshShaderTexture.setMatrix4x4Uniform("projection", m_camera.getProjectionMatrix());
+	
+	
+	//sun
+	//draw_object(m_meshShaderPhong, m_Sun, m_showTextureSun);
+	m_Sun.getMaterial(0).m_diffuseTexture.bind();
+	m_meshShaderTexture.setIntUniform("texture", m_Sun.getMaterial(0).m_diffuseTexture.getLayer());
+	draw_object(m_meshShaderTexture, m_Sun);
+	
+	m_Stars.setIdentity();
+	m_Stars.scaleObject(Vector3(m_starsScale, m_starsScale, m_starsScale));
+	m_Stars.translateWorld(Vector3(m_camera.origin()));
+	m_Stars.getMaterial(0).m_diffuseTexture.bind();
+	m_meshShaderTexture.setIntUniform("texture", m_Stars.getMaterial(0).m_diffuseTexture.getLayer());
+	draw_object(m_meshShaderTexture, m_Stars);
+	
+	//m_meshShaderPhong.unbind();
+	m_meshShaderTexture.unbind();
+	
+	//-------------------------------
+	
+	m_meshShaderDiffuse.bind();
+	
+	m_meshShaderDiffuse.setMatrix4x4Uniform("worldcamera", m_camera.getTransformation().Inverse());
+	m_meshShaderDiffuse.setMatrix4x4Uniform("projection", m_camera.getProjectionMatrix());
+	m_meshShaderDiffuse.setVector3Uniform("lightposition", lightPosInCamera.x, lightPosInCamera.y, lightPosInCamera.z );
+	
+	//light from moon
+	Vector3 sunToMoon = (m_Sun.origin() - m_Moon.origin()).normalize();
+	Vector3	earthToMoon	= (m_Earth.origin() - m_Moon.origin()).normalize();
+	Vector3 sunToEarth = (m_Sun.origin() - m_Earth.origin()).normalize();
+	float angle = acos(sunToMoon.dot(earthToMoon));
+	float moonLightIntensity = 0.3 * (M_PI - angle)/M_PI;
+	angle = acos(sunToEarth.dot(-earthToMoon));
+	float earthLightIntensity = 0.3 * (M_PI - angle)/M_PI;
+	m_meshShaderDiffuse.setVector3Uniform("moonlightcolor", moonLightIntensity, moonLightIntensity, moonLightIntensity);
+	Vector3 moonLightPosInCamera = m_camera.getTransformation().Inverse() * m_Moon.origin();
+	m_meshShaderDiffuse.setVector3Uniform("moonlightposition", moonLightPosInCamera.x, moonLightPosInCamera.y, moonLightPosInCamera.z);
+	
+	//earth
+	draw_object(m_meshShaderDiffuse, m_Earth, m_showTextureEarth);
+
+	m_meshShaderDiffuse.setVector3Uniform("moonlightcolor", earthLightIntensity, earthLightIntensity, earthLightIntensity);
+	moonLightPosInCamera = m_camera.getTransformation().Inverse() * m_Earth.origin();
+	m_meshShaderDiffuse.setVector3Uniform("moonlightposition", moonLightPosInCamera.x, moonLightPosInCamera.y, moonLightPosInCamera.z);
+	
+	//moon
+	draw_object(m_meshShaderDiffuse, m_Moon, m_showTextureMoon);
+	
+	m_meshShaderDiffuse.unbind();
+
+	if(m_geocentric) {
+		m_camera.rotateAroundAxisWorld(m_Earth.origin(), Vector3(0.0,1.0,0.0),-totalDaysElapsed * 2.0*M_PI/180.0 );
+		m_camera.translateWorld(-sunToEarthVector);
+	}
+}
+
+
+void SolarViewer::draw_object(Shader& sh, Mesh3D& mesh)
+{
+	
+	sh.setMatrix4x4Uniform("modelworld", mesh.getTransformation() );
+	
+	glEnableClientState(GL_VERTEX_ARRAY);
+	glEnableClientState(GL_NORMAL_ARRAY);
+	glEnableClientState(GL_TEXTURE_COORD_ARRAY);
+	
+	glVertexPointer( 3, GL_DOUBLE, 0, mesh.getVertexPointer() );
+	glNormalPointer( GL_DOUBLE, 0, mesh.getNormalPointer() );
+	glTexCoordPointer( 2, GL_DOUBLE, 0, mesh.getUvTextureCoordPointer() );
+	
+	for(unsigned int i = 0; i < mesh.getNumberOfParts(); i++)
+	{
+		glDrawElements( GL_TRIANGLES, mesh.getNoFaces(i)*3, GL_UNSIGNED_INT, mesh.getVertexIndicesPointer(i) );
+	}
+	
+	glDisableClientState(GL_NORMAL_ARRAY);
+	glDisableClientState(GL_VERTEX_ARRAY);
+	glDisableClientState(GL_TEXTURE_COORD_ARRAY);
+	
+}
+
+void SolarViewer::draw_object(Shader& sh, Mesh3D& mesh, bool showTexture)
+{
+	
+	sh.setMatrix4x4Uniform("modelworld", mesh.getTransformation() );
+			
+	glEnableClientState(GL_VERTEX_ARRAY);
+	glEnableClientState(GL_NORMAL_ARRAY);
+	if(showTexture)
+		glEnableClientState(GL_TEXTURE_COORD_ARRAY);
+			
+	glVertexPointer( 3, GL_DOUBLE, 0, mesh.getVertexPointer() );
+	glNormalPointer( GL_DOUBLE, 0, mesh.getNormalPointer() );
+	if(showTexture)
+		glTexCoordPointer( 2, GL_DOUBLE, 0, mesh.getUvTextureCoordPointer() );
+			
+	for(unsigned int i = 0; i < mesh.getNumberOfParts(); i++)
+	{
+		sh.setIntUniform("useTexture", showTexture && mesh.getMaterial(i).hasDiffuseTexture());
+		sh.setVector3Uniform("diffuseColor", 
+							 mesh.getMaterial(i).m_diffuseColor.x, 
+							 mesh.getMaterial(i).m_diffuseColor.y, 
+							 mesh.getMaterial(i).m_diffuseColor.z );
+		sh.setFloatUniform("specularExp", mesh.getMaterial(i).m_specularExp);
+		if(showTexture && mesh.getMaterial(i).hasDiffuseTexture())
+		{
+			mesh.getMaterial(i).m_diffuseTexture.bind();
+			sh.setIntUniform("texture", mesh.getMaterial(i).m_diffuseTexture.getLayer());
+		}
+		glDrawElements( GL_TRIANGLES, mesh.getNoFaces(i)*3, GL_UNSIGNED_INT, mesh.getVertexIndicesPointer(i) );
+		if(showTexture && mesh.getMaterial(i).hasDiffuseTexture())
+		{
+			mesh.getMaterial(i).m_diffuseTexture.unbind();
+		}
+	}
+			
+	glDisableClientState(GL_NORMAL_ARRAY);
+	glDisableClientState(GL_VERTEX_ARRAY);
+	if(showTexture)
+		glDisableClientState(GL_TEXTURE_COORD_ARRAY);
+	
+}
+
+
+//=============================================================================

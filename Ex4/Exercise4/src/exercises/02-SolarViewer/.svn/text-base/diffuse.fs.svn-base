@@ -1,0 +1,50 @@
+varying vec3 normal, lightDir, indirectLightDir;
+
+uniform int useTexture;
+uniform sampler2D texture;
+uniform vec3 diffuseColor;
+uniform float specularExp;
+uniform vec3 indirectlightcolor;
+uniform vec3 lightcolor;
+		
+void main()
+{	
+	//#ifndef STRIP_CODE__
+		vec3 color = ( (useTexture > 0) ? diffuseColor*texture2D(texture, gl_TexCoord[0].xy).xyz : diffuseColor );
+		vec3 indcolor = ( (useTexture > 0) ? diffuseColor*texture2D(texture, gl_TexCoord[0].xy).xyz : diffuseColor );
+	
+		vec4 finalcolor = vec4(0.0);
+		
+		//ambient
+		finalcolor += vec4(color,1.0)*0.1;
+					
+		vec3 N = normalize(normal);
+		vec3 L = normalize(lightDir);
+		float lambertTerm = dot(N, L);
+		float indirectLambertTerm = dot(N, normalize(indirectLightDir));
+		if(lambertTerm > 0.0)
+		{
+			color = color * lightcolor;
+			finalcolor += vec4(color, 1.0) * lambertTerm;	
+		}
+		if(indirectLambertTerm > 0.0)
+		{
+			indcolor = indcolor * indirectlightcolor;
+			finalcolor += vec4(indcolor, 1.0) * indirectLambertTerm;
+		}
+	//#else
+		//Exercise 4.4: Calculate the reflected intensities for the direct sun light (using lightDir and lightcolor) 
+		//and indirect light (using indirectLightDir and indirectlightcolor)
+		
+		//vec3 color = diffuseColor;
+		//vec3 indcolor = diffuseColor;
+		//vec4 finalcolor = vec4(color, 1.0) + vec4(indcolor, 1.0);
+	//#endif
+	
+	
+
+	gl_FragColor = finalcolor;	
+	
+	// need this line so OpenGL doesn't optimize out the variables -- remove in your solution
+	useTexture; texture; indirectlightcolor; specularExp;
+}
