@@ -310,8 +310,11 @@ void SolarViewer::idle()
 		//Exercise 4.3 Rotate the earth and the moon
 
 			m_Moon.rotateAroundAxisWorld(m_Earth.origin(),axisZ,moonEarthAngle);
+			m_Moon.rotateAroundAxisWorld(m_Sun.origin(),axisZ,earthSunAngle);
 			m_Earth.rotateAroundAxisWorld(m_Sun.origin(),axisZ,earthSunAngle);
+			m_Earth.rotateAroundAxisWorld(m_Earth.origin(),axisZ,earthAngle);
 			m_Sun.rotateAroundAxisWorld(m_Sun.origin(),axisZ,sunAngle);
+
 			std::cout << totalDaysElapsed << std::endl;
 
 	}
