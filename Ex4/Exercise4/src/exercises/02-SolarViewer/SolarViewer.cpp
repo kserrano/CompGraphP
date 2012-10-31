@@ -170,7 +170,7 @@ load_mesh(const std::string& filenameObj, MeshType type)
 			
 			//Exercise 4.2: Scale and translate the earth using the attributes m_earthScale and m_earthTrans
 			m_Earth.scaleWorld(Vector3(m_earthScale, m_earthScale, m_earthScale));
-			m_Earth.translateWorld(m_earthTrans);
+			m_Earth.translateWorld(Vector3(m_earthTrans,0,0));
 
 			m_showTextureEarth = m_Earth.hasUvTextureCoord();
 			break;
@@ -184,7 +184,7 @@ load_mesh(const std::string& filenameObj, MeshType type)
 			
 			//Exercise 4.2: Scale and translate the moon using the attributes m_moonScale and m_moonTrans
 			m_Moon.scaleWorld(Vector3(m_moonScale, m_moonScale, m_moonScale));
-			m_Moon.translateWorld(m_moonTrans);
+			m_Moon.translateWorld(Vector3(m_moonTrans,0,0));
 
 			m_showTextureMoon = m_Moon.hasUvTextureCoord();
 			break;
@@ -298,23 +298,22 @@ void SolarViewer::idle()
 	{
 		float prevTime = currentTime;
 		currentTime = watch.stop();
-		float daysElapsed = daysPerMiliSecond * (currentTime-prevTime);
+		float daysElapsed = daysElapsed + daysPerMiliSecond * (currentTime-prevTime);
 		totalDaysElapsed += daysElapsed;
 
-		float sunAngle = (2*M_PI)/24.47; //angle of rotation of the sun around itself
-		float earthSunAngle = ((2*M_PI)/365); // angle of rotation of the earth around the sun
-		float earthAngle = (2*M_PI)/1; // angle of rotation of the earth around itself
-		float moonEarthAngle = (2*M_PI)/29.53; // angle of rotation of the moon around the earth
+		float sunAngle = ((2*M_PI)/24.47)*daysElapsed; //angle of rotation of the sun around itself
+		float earthSunAngle = ((2*M_PI)/365)*daysElapsed; // angle of rotation of the earth around the sun
+		float earthAngle = (2*M_PI)/1*daysElapsed; // angle of rotation of the earth around itself
+		float moonEarthAngle = ((2*M_PI)/29.53)*daysElapsed; // angle of rotation of the moon around the earth
 		Vector3 axisZ(0.0,0.0,1.0);
-
+	
 		//Exercise 4.3 Rotate the earth and the moon
-		if((currentTime-prevTime)>1){
 
+			m_Moon.rotateAroundAxisWorld(m_Earth.origin(),axisZ,moonEarthAngle);
 			m_Earth.rotateAroundAxisWorld(m_Sun.origin(),axisZ,earthSunAngle);
-
+			m_Sun.rotateAroundAxisWorld(m_Sun.origin(),axisZ,sunAngle);
 			std::cout << totalDaysElapsed << std::endl;
-			
-		}
+
 	}
 }
 
