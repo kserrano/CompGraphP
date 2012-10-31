@@ -157,7 +157,8 @@ load_mesh(const std::string& filenameObj, MeshType type)
 			//Exercise 4.2: Scale the sun using the attribute m_sunScale
 			m_Sun.scaleWorld(Vector3(m_sunScale, m_sunScale, m_sunScale));
 			//Exercise 4.4: Set the light position to the center of the sun
-			
+			m_light.translateWorld(center);
+
 			m_showTextureSun = m_Sun.hasUvTextureCoord();
 			break;
 		case EARTH:
@@ -370,7 +371,7 @@ draw_scene(DrawMode _draw_mode)
 	m_meshShaderDiffuse.bind();
 	
 	//Exercise 4.4: Calculate the light position in camera coordinates
-	Vector3 lightPosInCamera(0.0,0.0,0.0);
+	Vector3 lightPosInCamera = m_light.origin();
 	
 	m_meshShaderDiffuse.setMatrix4x4Uniform("worldcamera", m_camera.getTransformation().Inverse());
 	m_meshShaderDiffuse.setMatrix4x4Uniform("projection", m_camera.getProjectionMatrix());
@@ -380,12 +381,16 @@ draw_scene(DrawMode _draw_mode)
 	
 	//Exercise 4.4: Setup the indirect lighting
 	//calculate the light position and intensity from the moon to the earth
-	float moonLightIntensity = 0.0;
-	Vector3 moonLightPosInCamera(0.0, 0.0, 0.0);
+	Vector3 moonToSunVector = m_Sun.origin() - m_Moon.origin();
+	Vector3 moonToEarthVector = m_Earth.origin() - m_Moon.origin();
+	float moonLightIntensity = ((2*M_PI - acos(((moonToSunVector).dot(moonToEarthVector))/(moonToSunVector.length()*moonToEarthVector.length())))/(2*M_PI))*m_recSunlightInt;
+	Vector3 moonLightPosInCamera = m_Moon.origin();
 	
 	//calculate the light position and intensity from the earth to the moon
-	float earthLightIntensity = 0.0;
-	Vector3 earthLightPosInCamera(0.0, 0.0, 0.0);
+	Vector3 earthToSunVector = -sunToEarthVector;
+	Vector3 earthToMoonVector = -moonToEarthVector;
+	float earthLightIntensity = ((2*M_PI - acos(((earthToSunVector).dot(earthToMoonVector))/(earthToSunVector.length()*earthToMoonVector.length())))/(2*M_PI))*m_recSunlightInt;;
+	Vector3 earthLightPosInCamera = m_Earth.origin();
 	
 	m_meshShaderDiffuse.setVector3Uniform("indirectlightcolor", moonLightIntensity, moonLightIntensity, moonLightIntensity);
 	m_meshShaderDiffuse.setVector3Uniform("indirectlightposition", moonLightPosInCamera.x, moonLightPosInCamera.y, moonLightPosInCamera.z);
