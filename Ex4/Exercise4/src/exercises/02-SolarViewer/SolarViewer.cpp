@@ -13,9 +13,10 @@
 
 #include "SolarViewer.h"
 #include "../../utils/Mesh3DReader.h"
-
+#include <math.h>
 //== DEFINES =================================================================
 #define drand48() (rand()/RAND_MAX)
+
 
 //== IMPLEMENTATION ========================================================== 
 
@@ -299,12 +300,21 @@ void SolarViewer::idle()
 		currentTime = watch.stop();
 		float daysElapsed = daysPerMiliSecond * (currentTime-prevTime);
 		totalDaysElapsed += daysElapsed;
-		
+
+		float sunAngle = (2*M_PI)/24.47; //angle of rotation of the sun around itself
+		float earthSunAngle = ((2*M_PI)/365); // angle of rotation of the earth around the sun
+		float earthAngle = (2*M_PI)/1; // angle of rotation of the earth around itself
+		float moonEarthAngle = (2*M_PI)/29.53; // angle of rotation of the moon around the earth
+		Vector3 axisZ(0.0,0.0,1.0);
+
 		//Exercise 4.3 Rotate the earth and the moon
-		
-		//Optional: Rotate the planets
-		
-		glutPostRedisplay();
+		if((currentTime-prevTime)>1){
+
+			m_Earth.rotateAroundAxisWorld(m_Sun.origin(),axisZ,earthSunAngle);
+
+			std::cout << totalDaysElapsed << std::endl;
+			
+		}
 	}
 }
 
