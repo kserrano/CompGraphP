@@ -13,14 +13,15 @@ void main()
 	//and indirect light (using indirectLightDir and indirectlightcolor)	
 	vec4 finalcolor = vec4(0.0);
 	
+    vec3 tex = texture2D(texture, (0.0,0.0,0.0)).xyz * 1.0;
     vec3 color;
     vec3 indcolor;
     if(useTexture==0){
 	    color = diffuseColor;
 	    indcolor = diffuseColor;
 	} else {
-        color = diffuseColor*texture;
-	    indcolor = diffuseColor*texture;
+        color = diffuseColor*tex;
+	    indcolor = diffuseColor*tex;
     }
 
     float Isun = lightcolor*color*(dot(normal, lightDir));
