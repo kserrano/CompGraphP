@@ -302,10 +302,10 @@ void SolarViewer::idle()
 		float daysElapsed = daysElapsed + daysPerMiliSecond * (currentTime-prevTime);
 		totalDaysElapsed += daysElapsed;
 
-		float sunAngle = ((2*M_PI)/24.47)*daysElapsed; //angle of rotation of the sun around itself
-		float earthSunAngle = ((2*M_PI)/365)*daysElapsed; // angle of rotation of the earth around the sun
-		float earthAngle = (2*M_PI)/1*daysElapsed; // angle of rotation of the earth around itself
-		float moonEarthAngle = ((2*M_PI)/29.53)*daysElapsed; // angle of rotation of the moon around the earth
+		float sunAngle = ((2*M_PI)/24.47f)*daysElapsed; //angle of rotation of the sun around itself
+		float earthSunAngle = ((2*M_PI)/365.25f)*daysElapsed; // angle of rotation of the earth around the sun
+		float earthAngle = (2*M_PI)/1.0f*daysElapsed; // angle of rotation of the earth around itself
+		float moonEarthAngle = ((2*M_PI)/29.53f)*daysElapsed; // angle of rotation of the moon around the earth
 		Vector3 axisZ(0.0,0.0,1.0);
 	
 		//Exercise 4.3 Rotate the earth and the moon
@@ -373,7 +373,7 @@ draw_scene(DrawMode _draw_mode)
 	m_meshShaderDiffuse.bind();
 	
 	//Exercise 4.4: Calculate the light position in camera coordinates
-	Vector3 lightPosInCamera = m_light.origin();
+	Vector3 lightPosInCamera = m_camera.getTransformation().Inverse()*m_light.origin();
 	
 	m_meshShaderDiffuse.setMatrix4x4Uniform("worldcamera", m_camera.getTransformation().Inverse());
 	m_meshShaderDiffuse.setMatrix4x4Uniform("projection", m_camera.getProjectionMatrix());
@@ -383,16 +383,22 @@ draw_scene(DrawMode _draw_mode)
 	
 	//Exercise 4.4: Setup the indirect lighting
 	//calculate the light position and intensity from the moon to the earth
-	Vector3 moonToSunVector = m_Sun.origin() - m_Moon.origin();
-	Vector3 moonToEarthVector = m_Earth.origin() - m_Moon.origin();
-	float moonLightIntensity = ((2*M_PI - acos(((moonToSunVector).dot(moonToEarthVector))/(moonToSunVector.length()*moonToEarthVector.length())))/(2*M_PI))*m_recSunlightInt;
-	Vector3 moonLightPosInCamera = m_Moon.origin();
+	Vector3 moonToSunVector = (m_Sun.origin() - m_Moon.origin()).normalize();
+	Vector3 moonToEarthVector = (m_Earth.origin() - m_Moon.origin()).normalize();
+	float moonLightIntensity = 0.0;
+	if((moonToSunVector.dot(moonToEarthVector)+1.0)/2.0 < 0.0){
+		moonLightIntensity = ((moonToSunVector.dot(moonToEarthVector)+1.0)/2.0)*m_recSunlightInt;
+	}
+	Vector3 moonLightPosInCamera = m_camera.getTransformation().Inverse()*m_Moon.origin();
 	
 	//calculate the light position and intensity from the earth to the moon
-	Vector3 earthToSunVector = -sunToEarthVector;
+	Vector3 earthToSunVector = -sunToEarthVector.normalize();
 	Vector3 earthToMoonVector = -moonToEarthVector;
-	float earthLightIntensity = ((2*M_PI - acos(((earthToSunVector).dot(earthToMoonVector))/(earthToSunVector.length()*earthToMoonVector.length())))/(2*M_PI))*m_recSunlightInt;;
-	Vector3 earthLightPosInCamera = m_Earth.origin();
+	float earthLightIntensity = 0.0;
+	if((earthToSunVector.dot(earthToMoonVector)+1.0)/2.0 < 0.0){
+		float earthLightIntensity = ((earthToSunVector.dot(earthToMoonVector)+1.0)/2.0)*m_recSunlightInt;;
+	}
+	Vector3 earthLightPosInCamera = m_camera.getTransformation().Inverse()*m_Earth.origin();
 	
 	m_meshShaderDiffuse.setVector3Uniform("indirectlightcolor", moonLightIntensity, moonLightIntensity, moonLightIntensity);
 	m_meshShaderDiffuse.setVector3Uniform("indirectlightposition", moonLightPosInCamera.x, moonLightPosInCamera.y, moonLightPosInCamera.z);

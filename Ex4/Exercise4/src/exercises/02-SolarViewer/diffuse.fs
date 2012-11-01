@@ -13,7 +13,7 @@ void main()
 	//and indirect light (using indirectLightDir and indirectlightcolor)	
 	vec4 finalcolor = vec4(0.0);
 	
-    vec3 tex = texture2D(texture, (0.0,0.0,0.0)).xyz * 1.0;
+    vec3 tex = texture2D(texture, gl_TexCoord[0].xy).xyz;
     vec3 color;
     vec3 indcolor;
     if(useTexture==0){
@@ -24,10 +24,19 @@ void main()
 	    indcolor = diffuseColor*tex;
     }
 
-    float Isun = lightcolor*color*(dot(normal, lightDir));
-    float Iind = indirectlightcolor*indcolor*(dot(normal, indirectLightDir));
+    if(-dot(normal, lightDir)){
+        color = lightcolor*color*(-dot(normal, lightDir));
+    } else {
+        color = 0.0;
+    }
+    if(-dot(normal, indirectLightDir)){
+        indcolor = indirectlightcolor*indcolor*(-dot(normal, indirectLightDir));
+    } else {
+        indcolor = 0.0;
+    }
+
 	//also add a small ambient term
-	finalcolor += vec4(color, Isun) + vec4(indcolor, Iind) + vec4(color, Isun)*0.1;	
+	finalcolor += vec4(color, 1.0) + vec4(indcolor, 1.0) + vec4(color, 1.0)*0.1;	
 
 	gl_FragColor = finalcolor;	
 	
