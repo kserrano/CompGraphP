@@ -306,15 +306,15 @@ void SolarViewer::idle()
 		float earthSunAngle = ((2*M_PI)/365.25f)*daysElapsed; // angle of rotation of the earth around the sun
 		float earthAngle = (2*M_PI)/1.0f*daysElapsed; // angle of rotation of the earth around itself
 		float moonEarthAngle = ((2*M_PI)/29.53f)*daysElapsed; // angle of rotation of the moon around the earth
-		Vector3 axisZ(0.0,0.0,1.0);
+		Vector3 axisY(0.0,1.0,0.0);
 	
 		//Exercise 4.3 Rotate the earth and the moon
 
-			m_Moon.rotateAroundAxisWorld(m_Earth.origin(),axisZ,moonEarthAngle);
-			m_Moon.rotateAroundAxisWorld(m_Sun.origin(),axisZ,earthSunAngle);
-			m_Earth.rotateAroundAxisWorld(m_Sun.origin(),axisZ,earthSunAngle);
-			m_Earth.rotateAroundAxisWorld(m_Earth.origin(),axisZ,earthAngle);
-			m_Sun.rotateAroundAxisWorld(m_Sun.origin(),axisZ,sunAngle);
+			m_Moon.rotateAroundAxisWorld(m_Earth.origin(),axisY,moonEarthAngle);
+			m_Moon.rotateAroundAxisWorld(m_Sun.origin(),axisY,earthSunAngle);
+			m_Earth.rotateAroundAxisWorld(m_Sun.origin(),axisY,earthSunAngle);
+			m_Earth.rotateAroundAxisWorld(m_Earth.origin(),axisY,earthAngle);
+			m_Sun.rotateAroundAxisWorld(m_Sun.origin(),axisY,sunAngle);
 
 			std::cout << totalDaysElapsed << std::endl;
 
