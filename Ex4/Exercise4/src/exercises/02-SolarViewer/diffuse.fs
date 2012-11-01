@@ -16,23 +16,22 @@ void main()
     vec3 tex = texture2D(texture, gl_TexCoord[0].xy).xyz;
     vec3 color;
     vec3 indcolor;
+    vec3 basecolor;
     if(useTexture==0){
-	    color = diffuseColor;
-	    indcolor = diffuseColor;
+	    basecolor = diffuseColor;
 	} else {
-        color = diffuseColor*tex;
-	    indcolor = diffuseColor*tex;
+        basecolor = diffuseColor*tex;
     }
 
     if(-dot(normal, lightDir)>0.0){
-        color = lightcolor*color*(-dot(normal, lightDir));
+        color = lightcolor*basecolor*(-dot(normal, lightDir));
     } else {
-       color = vec3(0.0,0.0,0.0);
+        color = vec3(0.0,0.0,0.0);
     }
     if(-dot(normal, indirectLightDir)>0.0){
-        indcolor = indirectlightcolor*indcolor*(-dot(normal, indirectLightDir));
+        indcolor = indirectlightcolor*basecolor*(-dot(normal, indirectLightDir));
     } else {
-       indcolor =  vec3(0.0,0.0,0.0);
+        indcolor =  vec3(0.0,0.0,0.0);
     }
 
 	//also add a small ambient term
