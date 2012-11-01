@@ -24,15 +24,15 @@ void main()
 	    indcolor = diffuseColor*tex;
     }
 
-    if(-dot(normal, lightDir)){
+    if(-dot(normal, lightDir)>0.0){
         color = lightcolor*color*(-dot(normal, lightDir));
     } else {
-        color = 0.0;
+       color = vec3(0.0,0.0,0.0);
     }
-    if(-dot(normal, indirectLightDir)){
+    if(-dot(normal, indirectLightDir)>0.0){
         indcolor = indirectlightcolor*indcolor*(-dot(normal, indirectLightDir));
     } else {
-        indcolor = 0.0;
+       indcolor =  vec3(0.0,0.0,0.0);
     }
 
 	//also add a small ambient term
