@@ -1,0 +1,25 @@
+\documentclass[10pt,a4paper]{report}
+\usepackage[latin1]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{color}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{fancyhdr}
+\lhead{Introduction to \\ Computer Graphics}
+\chead{Exercise 4}
+\rhead{Kevin Serrano, 204141 \\ Gianni Scarnera, 195899}
+\pagestyle{fancy}
+\author{Kevin Serrano, Gianni Scarnera}
+\title{Exercise 4}
+\begin{document}
+\maketitle
+
+\section*{4.2   Scale and Translations}
+
+\section*{4.3   Rotations}
+First of all, we have to calculate the angle of rotation of each planet in one day. In the case of the Earth, the angle of rotation around its axis is given in degree by $\frac{360}{1} = 360$ degree per day. In radian it is $2 \pi$, and the angle of rotation around the sun in one day is given by $\frac{2 \pi}{365} $rad. We did same calculations for others planets.
+
+After that we have to rotate the planet around the sun and themselves with the matrix of rotation around an axis in World coordinates, because we know that the sun is in the center of the universe in our model. So the sun rotates around itself, the Earth rotates around itself and around the sun, and the moon rotates around the sun and the Earth. The axis of rotation is $$axis = (0,1,0)$$ so now it is easy to calculate the rotations of each planet with the matrix $$rotateAroundAxisWorld(point,axis,angle)$$
+
+\end{document}
