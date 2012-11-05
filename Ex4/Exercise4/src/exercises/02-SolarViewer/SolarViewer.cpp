@@ -317,7 +317,7 @@ void SolarViewer::idle()
 			m_Sun.rotateAroundAxisWorld(m_Sun.origin(),axisY,sunAngle);
 
 			std::cout << totalDaysElapsed << std::endl;
-
+			glutPostRedisplay();
 	}
 }
 
