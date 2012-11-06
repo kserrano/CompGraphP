@@ -49,6 +49,7 @@ init()
 	m_showTextureStars = false;
 	m_showTextureSun = false;
 	m_showTextureEarth = false;
+	m_showTextureMoon = false;
 
 	
 	currentTime = 0.0;
