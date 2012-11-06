@@ -49,7 +49,7 @@ init()
 	m_showTextureStars = false;
 	m_showTextureSun = false;
 	m_showTextureEarth = false;
-	m_showTextureMoon = false;
+
 	
 	currentTime = 0.0;
 	isWatchOn = false;
@@ -316,7 +316,8 @@ void SolarViewer::idle()
 			m_Earth.rotateAroundAxisWorld(m_Earth.origin(),axisY,earthAngle);
 			m_Sun.rotateAroundAxisWorld(m_Sun.origin(),axisY,sunAngle);
 
-			std::cout << totalDaysElapsed << std::endl;
+			//std::cout << totalDaysElapsed << std::endl;
+			std::cout << daysElapsed << std::endl;
 			glutPostRedisplay();
 	}
 }
@@ -328,12 +329,13 @@ SolarViewer::
 draw_scene(DrawMode _draw_mode)
 {
 	Vector3 sunToEarthVector = m_Earth.origin() - m_Sun.origin();
-	
+	Vector3 axisY(0.0,1.0,0.0);
 	//Exercise 4.5: Transform the camera so that the earth becomes the center of rotation
 	if(m_geocentric)
 	{
 		m_camera.translateWorld(sunToEarthVector);
-		
+		m_camera.rotateAroundAxisWorld(m_Earth.origin(),axisY,0); // useless for angle = 0 + 2pi*k for k integer
+		std::cout << "premier if" << std::endl;
 	}
 	
 	// clear screen
@@ -416,9 +418,10 @@ draw_scene(DrawMode _draw_mode)
 	m_meshShaderDiffuse.unbind();
 
 	//Exercise 4.5: Transform the camera back to its original position
-	if(m_geocentric) 
-	{
+	if(m_geocentric)	{
+		Vector3 sunToEarthVector = m_Earth.origin() - m_Sun.origin();
 		m_camera.translateWorld(-sunToEarthVector);
+		std::cout << "deuxieme if" << std::endl;
 	}
 }
 
