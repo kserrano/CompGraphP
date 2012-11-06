@@ -29,9 +29,9 @@ First, we center the light using the origin of the sun and translateWorld on m\_
 To compute the position of the light in camera coordinates we get the inverse of the camera transformation and we apply it to our light source position. Now, to calculate the indirect light intensity for the moon and earth we use this formula : $$((\mathbf{vectorToSun} * \mathbf{vectorToOtherPLanet} + 1)/4)*intesityOfSun$$
 We also compute the camera coordinates for both the earth and the moon.
 
-Then, in diffuse.vs, we compute the directions of the light and indirectlight like so (FAUX!!!):
-$$lightDir = normalize(indirectlightposition - lightposition)$$
-$$indirectLightDir = normalize(lightposition - indirectlightposition)$$
+Then, in diffuse.vs, we compute the directions of the light and indirectlight like so :
+$$lightDir = normalize(vertex - lightposition)$$
+$$indirectLightDir = normalize(vertex - indirectlightposition)$$
 
 In the fragment shader, we set a basecolor using the diffuseColor and the texture depending if useTexture is on or not. We then compute the intensities using this formula : $$I = Ip * kd * (\mathbf{N} * \mathbf{L})$$
 for both color and indcolor. They are then put back together in finalcolor.
