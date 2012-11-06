@@ -18,8 +18,8 @@ void main()
 	vec3 vertex = vec3( worldcamera * modelworld * gl_Vertex );
 	
 	//Exercise 4.4: Calculate direct and indirect light directions
-	lightDir = normalize(indirectlightposition - lightposition);
-	indirectLightDir = normalize(lightposition - indirectlightposition);
+	lightDir = normalize(vertex - lightposition);
+	indirectLightDir = normalize(vertex - indirectlightposition);
 	
 	// get texture coordinate
 	gl_TexCoord[0]  = gl_MultiTexCoord0;
