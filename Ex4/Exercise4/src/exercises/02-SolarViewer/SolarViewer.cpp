@@ -418,7 +418,7 @@ draw_scene(DrawMode _draw_mode)
 	//Exercise 4.5: Transform the camera back to its original position
 	if(m_geocentric) 
 	{
-		
+		m_camera.translateWorld(-sunToEarthVector);
 	}
 }
 
