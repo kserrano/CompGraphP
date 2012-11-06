@@ -28,6 +28,6 @@ void main()
 	gl_Position = projection * vec4( vertex, 1.0 );
 	
 	// need this line so OpenGL doesn't optimize out the variables -- remove in your solution
-	lightposition; indirectlightposition; lightDir; indirectLightDir;
+	// lightposition; indirectlightposition; lightDir; indirectLightDir;
 	
 }

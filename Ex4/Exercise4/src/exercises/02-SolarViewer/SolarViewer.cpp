@@ -157,7 +157,7 @@ load_mesh(const std::string& filenameObj, MeshType type)
 			//Exercise 4.2: Scale the sun using the attribute m_sunScale
 			m_Sun.scaleWorld(Vector3(m_sunScale, m_sunScale, m_sunScale));
 			//Exercise 4.4: Set the light position to the center of the sun
-			m_light.translateWorld(center);
+			m_light.translateWorld(m_Sun.origin());
 
 			m_showTextureSun = m_Sun.hasUvTextureCoord();
 			break;
@@ -385,19 +385,13 @@ draw_scene(DrawMode _draw_mode)
 	//calculate the light position and intensity from the moon to the earth
 	Vector3 moonToSunVector = (m_Sun.origin() - m_Moon.origin()).normalize();
 	Vector3 moonToEarthVector = (m_Earth.origin() - m_Moon.origin()).normalize();
-	float moonLightIntensity = 0.0;
-	if((moonToSunVector.dot(moonToEarthVector)+1.0)/2.0 < 0.0){
-		moonLightIntensity = ((moonToSunVector.dot(moonToEarthVector)+1.0)/2.0)*m_recSunlightInt;
-	}
+	float moonLightIntensity = ((moonToSunVector.dot(moonToEarthVector)+1.0)/4.0)*m_recSunlightInt;
 	Vector3 moonLightPosInCamera = m_camera.getTransformation().Inverse()*m_Moon.origin();
 	
 	//calculate the light position and intensity from the earth to the moon
 	Vector3 earthToSunVector = -sunToEarthVector.normalize();
 	Vector3 earthToMoonVector = -moonToEarthVector;
-	float earthLightIntensity = 0.0;
-	if((earthToSunVector.dot(earthToMoonVector)+1.0)/2.0 < 0.0){
-		float earthLightIntensity = ((earthToSunVector.dot(earthToMoonVector)+1.0)/2.0)*m_recSunlightInt;;
-	}
+	float earthLightIntensity = ((earthToSunVector.dot(earthToMoonVector)+1.0)/4.0)*m_recSunlightInt;
 	Vector3 earthLightPosInCamera = m_camera.getTransformation().Inverse()*m_Earth.origin();
 	
 	m_meshShaderDiffuse.setVector3Uniform("indirectlightcolor", moonLightIntensity, moonLightIntensity, moonLightIntensity);

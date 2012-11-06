@@ -16,10 +16,24 @@
 \maketitle
 
 \section*{4.2   Scale and Translations}
+Very simply, we scale the sun with its Scale factor (m\_sunScale) using scaleWorld. We then do the same for the earth and the moon using their scale factors and additionnally we translate them their correct position using their corresponding translation factors and translateWorld.
 
 \section*{4.3   Rotations}
 First of all, we have to calculate the angle of rotation of each planet in one day. In the case of the Earth, the angle of rotation around its axis is given in degree by $\frac{360}{1} = 360$ degree per day. In radian it is $2 \pi$, and the angle of rotation around the sun in one day is given by $\frac{2 \pi}{365} $rad. We did same calculations for others planets.
 
 After that we have to rotate the planet around the sun and themselves with the matrix of rotation around an axis in World coordinates, because we know that the sun is in the center of the universe in our model. So the sun rotates around itself, the Earth rotates around itself and around the sun, and the moon rotates around the sun and the Earth. The axis of rotation is $$axis = (0,1,0)$$ so now it is easy to calculate the rotations of each planet with the matrix $$rotateAroundAxisWorld(point,axis,angle)$$
+
+\section*{4.4   Lighting and Textures}
+First, we center the light using the origin of the sun and translateWorld on m\_light.
+
+To compute the position of the light in camera coordinates we get the inverse of the camera transformation and we apply it to our light source position. Now, to calculate the indirect light intensity for the moon and earth we use this formula : $$((\mathbf{vectorToSun} * \mathbf{vectorToOtherPLanet} + 1)/4)*intesityOfSun$$
+We also compute the camera coordinates for both the earth and the moon.
+
+Then, in diffuse.vs, we compute the directions of the light and indirectlight like so (FAUX!!!):
+$$lightDir = normalize(indirectlightposition - lightposition)$$
+$$indirectLightDir = normalize(lightposition - indirectlightposition)$$
+
+In the fragment shader, we set a basecolor using the diffuseColor and the texture depending if useTexture is on or not. We then compute the intensities using this formula : $$I = Ip * kd * (\mathbf{N} * \mathbf{L})$$
+for both color and indcolor. They are then put back together in finalcolor.
 
 \end{document}
