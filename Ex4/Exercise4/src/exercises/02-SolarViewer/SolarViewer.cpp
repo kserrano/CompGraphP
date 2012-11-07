@@ -335,8 +335,8 @@ draw_scene(DrawMode _draw_mode)
 	if(m_geocentric)
 	{
 		m_camera.translateWorld(sunToEarthVector);
-		m_camera.rotateAroundAxisWorld(m_Earth.origin(),axisY,0); // useless for angle = 0 + 2pi*k for k integer
-		std::cout << "premier if" << std::endl;
+		m_camera.rotateAroundAxisWorld(m_Earth.origin(),axisY,(2*M_PI)*totalDaysElapsed); 
+
 	}
 	
 	// clear screen
@@ -421,8 +421,9 @@ draw_scene(DrawMode _draw_mode)
 	//Exercise 4.5: Transform the camera back to its original position
 	if(m_geocentric)	{
 		Vector3 sunToEarthVector = m_Earth.origin() - m_Sun.origin();
+		m_camera.rotateAroundAxisWorld(m_Earth.origin(),axisY,-(2*M_PI)*totalDaysElapsed);
 		m_camera.translateWorld(-sunToEarthVector);
-		std::cout << "deuxieme if" << std::endl;
+
 	}
 }
 
