@@ -13,7 +13,7 @@ void main()
 	vec3 vertex = vec3( worldcamera * modelworld * gl_Vertex );
 	 
 	// compute the linear depth - store depth between 0 and 1
-	depth = 0.0;
+	depth = (-vertex.z - near)/(far - near) ;
 	
 	// project the point into the camera
 	gl_Position = projection * vec4( vertex, 1.0 );
