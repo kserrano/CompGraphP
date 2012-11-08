@@ -1,7 +1,7 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 10.00
-# Visual Studio 2008
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "03-CartoonViewer", "03-CartoonViewer.vcproj", "{D936DEF8-763B-4038-B0F3-51070CFE9683}"
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "03-CartoonViewer", "03-CartoonViewer.vcxproj", "{D936DEF8-763B-4038-B0F3-51070CFE9683}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
