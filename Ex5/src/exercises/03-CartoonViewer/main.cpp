@@ -19,6 +19,8 @@ int main(int argc, char **argv)
 	else if(argc == 3)
 		window.loadMesh(argv[1], argv[2]);
 
-	
+	std::cout << glewIsExtensionSupported("GL_EXT_framebuffer_object") << std::endl;
+
+
 	glutMainLoop();
 }
