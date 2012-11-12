@@ -1,0 +1,21 @@
+\documentclass[10pt,a4paper]{report}
+\usepackage[latin1]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{color}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{fancyhdr}
+\lhead{Introduction to \\ Computer Graphics}
+\chead{Exercise 5}
+\rhead{Kevin Serrano, 204141 \\ Gianni Scarnera, 195899}
+\pagestyle{fancy}
+\author{Kevin Serrano, Gianni Scarnera}
+\title{Exercise 5}
+\begin{document}
+\maketitle
+
+\section*{4.2   Toon-Shading }
+For replace the continuous diffuse lightning model with a discrete one, we first have to calculate a value $D = max(0,\mathbf{N \cdot L})$ and $D$ is between $[0,1]$ then we will see in the 1D texture wich is the value of the discrete coefficient for the surface shading. We use the function of the object Sampler2D. Then we just multiply this value with the color of the object.
+
+\end{document}

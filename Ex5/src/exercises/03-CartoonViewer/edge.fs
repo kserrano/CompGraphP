@@ -15,7 +15,16 @@ void main()
 	// y derivative:  0  0  0
 	//               -1 -2 -1
 	//
-	
+
+	for(int i = 0; i < texture.length();i+dx){
+		for(int j = 0; j < texture.length();j+dy}
+			for(int m=0; m<3;m++){
+				for(int n = 0; n<3;n++){
+				Gx = 0;
+				}
+			}
+		}
+	}
 	gl_FragColor = texture2D(texture, gl_TexCoord[0].xy);
 	
 }
