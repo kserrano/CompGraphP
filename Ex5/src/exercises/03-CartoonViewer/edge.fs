@@ -20,9 +20,6 @@ void main()
 	//               -1 -2 -1
 	//
 
-    float x = gl_TexCoord[0].x;
-    float y = gl_TexCoord[0].y;
-
 	float Gx = -value(-1,-1) + value(1,-1) - 2.0*value(-1,0) + 2.0*value(1,0) - value(-1,1) + value(1,1);
     float Gy = value(-1,-1) + 2.0*value(0,-1) + value(1,-1) - value(-1,1) - 2.0*value(0,1) - value(1,1);
 
